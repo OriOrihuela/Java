@@ -7,6 +7,14 @@
 # BlueJ files
 *.ctxt
 
+#Gradle
+*.gradle/
+
+
+#IntelliJ IDEA
+*.idea/
+
+
 #VSCode
 *.vscode/
 .vscode/settings.json
