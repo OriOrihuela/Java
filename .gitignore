@@ -8,11 +8,11 @@
 *.ctxt
 
 #Gradle
-*.gradle/
+*.gradle
 
 
 #IntelliJ IDEA
-*.idea/
+*.idea
 
 
 #VSCode
