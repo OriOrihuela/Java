@@ -9,6 +9,11 @@
 
 #Gradle
 *.gradle/
+*gradle/
+build.gradle
+gradlew
+gradlew.bat
+
 
 
 #IntelliJ IDEA
