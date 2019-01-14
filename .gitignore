@@ -7,6 +7,14 @@
 # BlueJ files
 *.ctxt
 
+#VSCode
+*.vscode/
+.vscode/settings.json
+.vscode/tasks.json
+.vscode/launch.json
+.vscode/extensions.json
+
+
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
 
