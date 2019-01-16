@@ -5,9 +5,28 @@ public class Dni {
 
         /* Constructors */
 
-        public Dni(){}
+        public Dni() {}
 
         public Dni(String dni) {
-            this.dni = dni;
+                this.dni = dni;
+        }
+
+        /* Getters */
+        public String getDni() {
+                return this.dni;
+        }
+
+        /* Functions */
+        public String getParteNumerica(String dni) {
+
+        }
+        public String getParteAlfabetica(String dni) {
+
+        }
+        private Char calcularLetra() {
+
+        }
+        public Boolean verifyLetra(){
+
         }
 }
