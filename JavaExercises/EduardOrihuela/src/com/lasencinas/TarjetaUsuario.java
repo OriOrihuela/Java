@@ -15,13 +15,14 @@ public class TarjetaUsuario {
     }
 
     // Setters and Getters of all properties
-            /* ID property --> Setters/Getters */
-    public void setId(int number) { this.id = number;}
-    public int getId() { return this.id;}
 
-            /* Activated property --> Setters/Getters */
-    public void setActivated(boolean sentence) { this.activated = sentence;}
-    public boolean getActivated() { return this.activated;}
+            /* id property */
+    public void setId(int number) { this.id = number; }
+    public int getId() { return this.id; }
+
+            /* activated property */
+    public void setActivated(boolean sentence) { this.activated = sentence; }
+    public boolean getActivated() { return this.activated; }
 
 
 }

@@ -19,7 +19,13 @@ public class Estacion {
     }
 
     // Setters adn getters of all properties
+
+            /* id property */
     public int getId() { return this.id; }
-    public String getDirection() { return this.direction;}
-    public  int getNumberAnchorages() { return this.numberAnchorages;}
+
+            /* direction property */
+    public String getDirection() { return this.direction; }
+
+            /* numberAnchorages property */
+    public  int getNumberAnchorages() { return this.numberAnchorages; }
 }

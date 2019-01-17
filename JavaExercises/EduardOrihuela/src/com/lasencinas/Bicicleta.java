@@ -10,8 +10,9 @@ public class Bicicleta {
 
     public Bicicleta(int id) { this.id = id; }
 
-    // Setters and Getters
-            /* ID property --> Setters/Getters */
-    public void setId(int number) { this.id = number;}
+    // Setters and Getters of all properties
+
+            /* id property */
+    public void setId(int number) { this.id = number; }
     public int getId() { return this.id; }
 }
