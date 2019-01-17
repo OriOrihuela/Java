@@ -12,6 +12,8 @@ public class Dni {
     }
 
     /* Getters */
+
+    public void setDni(String cadena){ this.dni = cadena; }
     public String getDni() {
         return this.dni;
     }
@@ -28,10 +30,8 @@ public class Dni {
 
         } */
 
-    public int getDniNumerico(){
-        String dniNumerico = this.dni.substring(0,this.dni.length()-1);
-        int intdniNumerico = Integer.parseInt(dniNumerico);
-        return intdniNumerico;
+    public String getParteNumerica(){
+        return this.dni.substring(0,this.dni.length()-1);
     }
     /* tabla **/
 
