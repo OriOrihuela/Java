@@ -9,7 +9,10 @@ public class TarjetaUsuario {
     // Constructor
     public TarjetaUsuario() {}
 
-    public TarjetaUsuario(int id) { this.id = id;}
+    public TarjetaUsuario(int id, boolean activated) {
+        this.id = id;
+        this.activated = activated;
+    }
 
     // Setters and Getters of all properties
             /* ID property --> Setters/Getters */
