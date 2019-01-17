@@ -3,7 +3,7 @@ package com.lasencinas;
 public class TarjetaUsuario {
 
     // Properties
-    private int id; /* Identifier of the card; number of nine digits */
+    private int id;             /* Identifier of the card; number of nine digits */
     private boolean activated;  /* Logical value that indicates if the card is activated or not */
 
     // Constructor
