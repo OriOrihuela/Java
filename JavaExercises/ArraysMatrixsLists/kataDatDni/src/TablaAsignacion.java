@@ -17,7 +17,6 @@ public class TablaAsignacion {
         int dni = Integer.parseInt(DNI);
         int posicion = dni % getLongitud();
         return getLetra(posicion);
-
     }
 }
 
