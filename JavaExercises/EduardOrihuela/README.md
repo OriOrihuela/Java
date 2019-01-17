@@ -2,8 +2,8 @@
 
 ### This project starts from the need of practice in Java POO.
 
-There are 3 classes:
-- Bicileta.
+There are 4 classes:
+- Bicicleta.
 - Estacion.
 - TarjetaUsuario.
 
