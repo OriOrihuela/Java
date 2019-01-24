@@ -1,8 +1,8 @@
 package org.lasencinas.biciPalma;
 
-import bicicleta.Bicicleta;
-import estacion.Estacion;
-import tarjetaUsuario.TarjetaUsuario;
+import org.lasencinas.bicicleta.Bicicleta;
+import org.lasencinas.estacion.Estacion;
+import org.lasencinas.tarjetaUsuario.TarjetaUsuario;
 
 public class BiciPalma {
 
@@ -16,13 +16,13 @@ public class BiciPalma {
 
         System.out.println("\n **** caso TEST visualizar estado de la estacion **** \n");
 
-        estacion.consultarEstacion();
+        estacion.checkStation();
 
         /* caso TEST visualizar anclajes libres */
 
         System.out.println("\n **** caso TEST visualizar anclajes libres **** \n");
 
-        System.out.println("anclajesLibres: " + estacion.anclajesLibres());
+        System.out.println("anclajesLibres: " + estacion.freeAnchorages());
 
         /* caso TEST anclar bicicleta(s) */
 
@@ -38,16 +38,16 @@ public class BiciPalma {
 
         for ( int id: bicicletas ){
             Bicicleta bicicleta = new Bicicleta(id);
-            estacion.anclarBicicleta(bicicleta);
+            estacion.anchorBike(bicicleta);
         }
 
-        System.out.println("anclajesLibres tras generar "+ bicicletas.length + " bicis: " + estacion.anclajesLibres());
+        System.out.println("anclajesLibres tras generar "+ bicicletas.length + " bicis: " + estacion.freeAnchorages());
 
         /* caso TEST consultar bicicletas ancladas */
 
         System.out.println("\n **** caso TEST consultar bicicletas ancladas **** \n");
 
-        estacion.consultarAnclajes();
+        estacion.checkAnchorages();
 
         /* caso TEST retirar bicicleta */
 
@@ -55,12 +55,12 @@ public class BiciPalma {
 
         TarjetaUsuario tarjetaUsuario = new TarjetaUsuario("000456789", true);
 
-        System.out.println("¿tarjeta de usuario activada? (true/false): " + estacion.leerTarjetaUsuario(tarjetaUsuario) );
+        System.out.println("¿tarjeta de usuario activada? (true/false): " + estacion.readUserCard(tarjetaUsuario) );
 
-        estacion.retirarBicicleta(tarjetaUsuario);
+        estacion.removeBike(tarjetaUsuario);
 
-        estacion.consultarAnclajes();
+        estacion.checkAnchorages();
 
-        System.out.println("anclajesLibres: " + estacion.anclajesLibres());
+        System.out.println("anclajesLibres: " + estacion.freeAnchorages());
     }
 }
