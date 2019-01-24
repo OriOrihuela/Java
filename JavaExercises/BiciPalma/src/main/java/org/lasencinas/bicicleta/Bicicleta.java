@@ -2,17 +2,14 @@ package org.lasencinas.bicicleta;
 
 public class Bicicleta {
 
-    // Properties of the Class
-    private int id; /* Identifier of the bike; number of three digits */
+    // Properties:
+    private int id = 0; /* Identifier of the bike; number of three digits */
 
-    // Constructor
-    public Bicicleta() {}
-
+    // Constructor:
     public Bicicleta(int id) { this.id = id; }
 
-    // Setters and Getters of all properties
-
-    /* id property */
+    // Setters and Getters:
+        /* id property */
     public void setId(int number) { this.id = number; }
     public int getId() { return this.id; }
 }
