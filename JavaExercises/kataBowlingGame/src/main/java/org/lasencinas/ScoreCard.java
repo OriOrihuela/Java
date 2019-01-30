@@ -4,8 +4,8 @@ public class ScoreCard {
 
     // Properties of the class //
     private int STRIKE = 10;
+    private int SPARE = 10;
     private int ZERO = 0;
-    private int rolls = 0;
     private String scoreCard = "";
     private int totalScore = 0;
     private String pins = "-123456789";
@@ -13,12 +13,10 @@ public class ScoreCard {
     // Constructor //
     public ScoreCard() {
         this.scoreCard = "";
-        this.rolls = 0;
     }
 
     public ScoreCard(String scoreCard) {
         this.scoreCard = scoreCard;
-        this.rolls = scoreCard.length();
     }
 
     // Setters and getters of the class //
@@ -26,33 +24,36 @@ public class ScoreCard {
         return this.scoreCard;
     }
 
-    public int getRolls() {
-        return this.rolls;
-    }
-
     public int getTotalScore() {
         return this.totalScore;
     }
+
+    public int getStrike() { return this.STRIKE; }
+
+    public int getSpare() { return this.SPARE; }
 
     // Behaviours //
     private void updateTotalScore(int score) {
         this.totalScore += score;
     }
 
-    public int computePins(String pins) {
-        return this.pins.indexOf(pins);
-    }
-
-    public int getSTRIKE() {
-        return this.STRIKE;
-    }
+    public int computePins(char pin) { return this.pins.indexOf(pin); }
 
     public int computeStrike(char strike) {
         if (strike == 'X') {
-            return getSTRIKE();
+            return getStrike();
         }
         else {
-            return 0;
+            return this.ZERO;
+        }
+    }
+
+    public int computeSpare(char spare) {
+        if (spare == '/') {
+            return this.SPARE;
+        }
+        else {
+            return this.ZERO;
         }
     }
 
@@ -60,18 +61,18 @@ public class ScoreCard {
 
         for(int i = 0; i < getScoreCard().length(); i++){
 
-            char pin = getScoreCard().charAt(i);
+            char roll = getScoreCard().charAt(i);
 
-            if (pin == 'X') {
-                updateTotalScore(computeStrike(pin));
+            if (roll == 'X') {
+                updateTotalScore(computeStrike(roll));
             }
-            if (pin == '/') {
-                updateTotalScore(10);
+            if (roll == '/') {
+                updateTotalScore(computeSpare(roll));
             }
             else {
-                updateTotalScore(computePins(i));
+                updateTotalScore(computePins(roll));
             }
         }
-        return this.totalScore;
+        return getTotalScore();
     }
 }
