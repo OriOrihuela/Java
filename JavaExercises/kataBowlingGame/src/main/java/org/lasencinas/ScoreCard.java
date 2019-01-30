@@ -41,7 +41,7 @@ public class ScoreCard {
 
     public int computeStrike(char strike) {
         if (strike == 'X') {
-            return getStrike();
+            return this.STRIKE;
         }
         else {
             return this.ZERO;
