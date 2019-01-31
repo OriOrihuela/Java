@@ -108,7 +108,12 @@ public class ScoreCard {
             }
             if (isStrike(result)) {
                 char nextResult2 = scoreCard.charAt(roll + 2);
-                updateTotalScore(computeStrike(result) + computePins(nextResult) + computePins(nextResult2));
+                if (isStrike(nextResult) && isStrike(nextResult2)) {
+                    updateTotalScore(computeStrike(result) + computeStrike(nextResult) + computeStrike(nextResult2));
+                }
+                else if (isStrike(nextResult) && !isStrike(nextResult2)) {
+                    updateTotalScore(computeStrike(result) + computeStrike(nextResult) + computePins(nextResult2));
+                }
             }
             else {
                 updateTotalScore(computePins(result));
