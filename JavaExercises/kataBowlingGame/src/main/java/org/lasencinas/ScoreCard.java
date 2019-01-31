@@ -3,6 +3,7 @@ package org.lasencinas;
 public class ScoreCard {
 
     // Properties of the class //
+
     private int STRIKE = 10;
     private int SPARE = 10;
     private int ZERO = 0;
@@ -11,6 +12,7 @@ public class ScoreCard {
     private String pins = "-123456789";
 
     // Constructor //
+
     public ScoreCard() {
         this.scoreCard = "";
     }
@@ -20,6 +22,7 @@ public class ScoreCard {
     }
 
     // Setters and getters of the class //
+
     public String getScoreCard() {
         return this.scoreCard;
     }
@@ -28,49 +31,87 @@ public class ScoreCard {
         return this.totalScore;
     }
 
-    public int getStrike() { return this.STRIKE; }
-
-    public int getSpare() { return this.SPARE; }
-
-    // Behaviours //
-    private void updateTotalScore(int score) {
-        this.totalScore += score;
+    public int getStrike() {
+        return this.STRIKE;
     }
 
-    public int computePins(char pin) { return this.pins.indexOf(pin); }
+    public int getSpare() {
+        return this.SPARE;
+    }
+
+    // Behaviours //
+
+    public boolean isNormalRoll(char roll) {
+        if (roll != 'X' && roll != '/') {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+    public int computePins(char pin) {
+        return this.pins.indexOf(pin);
+    }
+
+    public  boolean isStrike(char strike) {
+        if (strike == 'X') {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
 
     public int computeStrike(char strike) {
         if (strike == 'X') {
             return this.STRIKE;
+        } else {
+            return this.ZERO;
+        }
+    }
+
+    public  boolean isSpare(char spare) {
+        if (spare == '/') {
+            return true;
         }
         else {
-            return this.ZERO;
+            return false;
         }
     }
 
     public int computeSpare(char spare) {
         if (spare == '/') {
             return this.SPARE;
-        }
-        else {
+        } else {
             return this.ZERO;
         }
     }
 
-    public int calculateScore(){
+    public void updateTotalScore(int score) {
+        this.totalScore += score;
+    }
 
-        for(int i = 0; i < getScoreCard().length(); i++){
+    public int calculateScore(String scoreCard) {
 
-            char roll = getScoreCard().charAt(i);
+        for (int roll = 0; roll < scoreCard.length(); roll++) {
+            char result = scoreCard.charAt(roll);
+            char nextResult = scoreCard.charAt(roll + 1);
 
-            if (roll == 'X') {
-                updateTotalScore(computeStrike(roll));
+            if (isSpare(result)) {
+                if (!isStrike(nextResult)) {
+                    updateTotalScore(computeSpare(result) + computePins(nextResult) - computePins(scoreCard.charAt(roll - 1)));
+                }
+                else if (isStrike(nextResult)) {
+                    updateTotalScore(computeSpare(result) + computeStrike(nextResult) - computePins(scoreCard.charAt(roll - 1)));
+                }
             }
-            if (roll == '/') {
-                updateTotalScore(computeSpare(roll));
+            if (isStrike(result)) {
+                char nextResult2 = scoreCard.charAt(roll + 2);
+                updateTotalScore(computeStrike(result) + computePins(nextResult) + computePins(nextResult2));
             }
             else {
-                updateTotalScore(computePins(roll));
+                updateTotalScore(computePins(result));
             }
         }
         return getTotalScore();
