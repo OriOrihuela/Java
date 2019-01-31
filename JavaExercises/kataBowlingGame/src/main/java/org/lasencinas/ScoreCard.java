@@ -31,24 +31,7 @@ public class ScoreCard {
         return this.totalScore;
     }
 
-    public int getStrike() {
-        return this.STRIKE;
-    }
-
-    public int getSpare() {
-        return this.SPARE;
-    }
-
     // Behaviours //
-
-    public boolean isNormalRoll(char roll) {
-        if (roll != 'X' && roll != '/') {
-            return true;
-        }
-        else {
-            return false;
-        }
-    }
 
     public int computePins(char pin) {
         return this.pins.indexOf(pin);
@@ -96,9 +79,9 @@ public class ScoreCard {
 
         for (int roll = 0; roll < scoreCard.length(); roll++) {
             char result = scoreCard.charAt(roll);
-            char nextResult = scoreCard.charAt(roll + 1);
 
             if (isSpare(result)) {
+                char nextResult = scoreCard.charAt(roll + 1);
                 if (!isStrike(nextResult)) {
                     updateTotalScore(computeSpare(result) + computePins(nextResult) - computePins(scoreCard.charAt(roll - 1)));
                 }
@@ -107,6 +90,7 @@ public class ScoreCard {
                 }
             }
             if (isStrike(result)) {
+                char nextResult = scoreCard.charAt(roll + 1);
                 char nextResult2 = scoreCard.charAt(roll + 2);
                 if (isStrike(nextResult) && isStrike(nextResult2)) {
                     updateTotalScore(computeStrike(result) + computeStrike(nextResult) + computeStrike(nextResult2));
