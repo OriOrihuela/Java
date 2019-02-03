@@ -96,8 +96,7 @@ public class ScoreCard {
                     char previousResult = scoreCard.charAt(roll - 1);
                     if (!isStrike(nextResult)) {
                         updateTotalScore(computeSpare(result) + computePins(nextResult) - computePins(previousResult));
-                    }
-                    else if (isStrike(nextResult)) {
+                    } else if (isStrike(nextResult)) {
                         updateTotalScore(computeSpare(result) + computeStrike(nextResult) - computePins(previousResult));
                     }
                 }
@@ -110,26 +109,22 @@ public class ScoreCard {
                         if (roll == scoreCard.length() - 3 && result == 'X') {
                             break;
                         }
-                    }
-                    else if (isStrike(nextResult) && !isStrike(nextResult2)) {
+                    } else if (isStrike(nextResult) && !isStrike(nextResult2)) {
                         updateTotalScore((computeStrike(result) * 2) + computePins(nextResult2));
                         if (roll == scoreCard.length() - 3 && result == 'X') {
                             break;
                         }
-                    }
-                    else if (isNormalRoll(nextResult) && isStrike(nextResult2)) {
+                    } else if (isNormalRoll(nextResult) && isStrike(nextResult2)) {
                         updateTotalScore(computePins(nextResult) + computeStrike(result) * 2);
                         if (roll == scoreCard.length() - 3 && result == 'X') {
                             break;
                         }
-                    }
-                    else if (isNormalRoll(nextResult) && isSpare(nextResult2)) {
+                    } else if (isNormalRoll(nextResult) && isSpare(nextResult2)) {
                         updateTotalScore(computeStrike(result) + computeSpare(nextResult2));
                         if (roll == scoreCard.length() - 3 && result == 'X') {
                             break;
                         }
-                    }
-                    else if (isNormalRoll(nextResult) && isNormalRoll(nextResult2)) {
+                    } else if (isNormalRoll(nextResult) && isNormalRoll(nextResult2)) {
                         updateTotalScore(computeStrike(result) + computePins(nextResult) + computePins(nextResult2));
                         if (roll == scoreCard.length() - 3 && result == 'X') {
                             break;
@@ -143,11 +138,9 @@ public class ScoreCard {
                     }
                     updateTotalScore(computePins(result));
                 }
-            }
-            catch (IndexOutOfBoundsException e) {
+            } catch (IndexOutOfBoundsException e) {
                 return getTotalScore();
             }
-        }
-        return getTotalScore();
+        } return getTotalScore();
     }
 }
