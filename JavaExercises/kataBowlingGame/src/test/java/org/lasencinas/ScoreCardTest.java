@@ -91,4 +91,11 @@ public class ScoreCardTest {
         int totalScore = scoreCard.calculateScore(punctuation);
         assertEquals(220, totalScore);
     }
+
+    @Test
+    public void calculateScoreTest8() {
+        String punctuation = "5/9-719/XX9/271/XX9";
+        int totalScore = scoreCard.calculateScore(punctuation);
+        assertEquals(175, totalScore);
+    }
 }
