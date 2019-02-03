@@ -33,6 +33,15 @@ public class ScoreCard {
 
     // Behaviours //
 
+    public boolean isNormalRoll(char roll) {
+        if (roll != 'X' && roll != '/') {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
     public int computePins(char pin) {
         return this.pins.indexOf(pin);
     }
@@ -80,27 +89,33 @@ public class ScoreCard {
         for (int roll = 0; roll < scoreCard.length(); roll++) {
             char result = scoreCard.charAt(roll);
 
-            if (isSpare(result)) {
-                char nextResult = scoreCard.charAt(roll + 1);
-                if (!isStrike(nextResult)) {
-                    updateTotalScore(computeSpare(result) + computePins(nextResult) - computePins(scoreCard.charAt(roll - 1)));
+            try {
+                if (isSpare(result)) {
+                    char nextResult = scoreCard.charAt(roll + 1);
+                    char previousResult = scoreCard.charAt(roll - 1);
+                    if (!isStrike(nextResult)) {
+                        updateTotalScore(computeSpare(result) + computePins(nextResult) - computePins(previousResult));
+                    } else if (isStrike(nextResult)) {
+                        updateTotalScore(computeSpare(result) + computeStrike(nextResult) - computePins(previousResult));
+                    }
                 }
-                else if (isStrike(nextResult)) {
-                    updateTotalScore(computeSpare(result) + computeStrike(nextResult) - computePins(scoreCard.charAt(roll - 1)));
+                if (isStrike(result)) {
+                    char nextResult = scoreCard.charAt(roll + 1);
+                    char nextResult2 = scoreCard.charAt(roll + 2);
+                    if (isStrike(nextResult) && isStrike(nextResult2)) {
+                        updateTotalScore(computeStrike(result) * 3);
+                    } else if (isStrike(nextResult) && !isStrike(nextResult2)) {
+                        updateTotalScore((computeStrike(result) * 2) + computePins(nextResult2));
+                    }
+                } else if (isNormalRoll(result)) {
+                    if (roll == 20 && scoreCard.charAt(19) == '/') {
+                        break;
+                    }
+                    updateTotalScore(computePins(result));
                 }
             }
-            if (isStrike(result)) {
-                char nextResult = scoreCard.charAt(roll + 1);
-                char nextResult2 = scoreCard.charAt(roll + 2);
-                if (isStrike(nextResult) && isStrike(nextResult2)) {
-                    updateTotalScore(computeStrike(result) + computeStrike(nextResult) + computeStrike(nextResult2));
-                }
-                else if (isStrike(nextResult) && !isStrike(nextResult2)) {
-                    updateTotalScore(computeStrike(result) + computeStrike(nextResult) + computePins(nextResult2));
-                }
-            }
-            else {
-                updateTotalScore(computePins(result));
+            catch (IndexOutOfBoundsException e) {
+                return getTotalScore();
             }
         }
         return getTotalScore();
