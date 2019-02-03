@@ -36,8 +36,7 @@ public class ScoreCard {
     public boolean isNormalRoll(char roll) {
         if (roll != 'X' && roll != '/') {
             return true;
-        }
-        else {
+        } else {
             return false;
         }
     }
@@ -49,8 +48,7 @@ public class ScoreCard {
     public  boolean isStrike(char strike) {
         if (strike == 'X') {
             return true;
-        }
-        else {
+        } else {
             return false;
         }
     }
@@ -66,8 +64,7 @@ public class ScoreCard {
     public  boolean isSpare(char spare) {
         if (spare == '/') {
             return true;
-        }
-        else {
+        } else {
             return false;
         }
     }
