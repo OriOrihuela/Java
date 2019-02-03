@@ -70,4 +70,25 @@ public class ScoreCardTest {
         int totalScore = scoreCard.calculateScore(punctuation);
         assertEquals(90, totalScore);
     }
+
+    @Test
+    public void calculateScoreTest5() {
+        String punctuation = "XXX454/9/1-XX5/X";
+        int totalScore = scoreCard.calculateScore(punctuation);
+        assertEquals(178, totalScore);
+    }
+
+    @Test
+    public void calculateScoreTest6() {
+        String punctuation = "4/XX5/9-7/X5/8/1/X";
+        int totalScore = scoreCard.calculateScore(punctuation);
+        assertEquals(182, totalScore);
+    }
+
+    @Test
+    public void calculateScoreTest7() {
+        String punctuation = "XXXX81-/9/5/XX5X";
+        int totalScore = scoreCard.calculateScore(punctuation);
+        assertEquals(220, totalScore);
+    }
 }
