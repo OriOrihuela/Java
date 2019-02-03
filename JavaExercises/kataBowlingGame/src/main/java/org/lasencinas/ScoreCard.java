@@ -111,22 +111,22 @@ public class ScoreCard {
                         }
                     } else if (isStrike(nextResult) && !isStrike(nextResult2)) {
                         updateTotalScore((computeStrike(result) * 2) + computePins(nextResult2));
-                        if (roll == scoreCard.length() - 3 && result == 'X') {
+                        if (roll == scoreCard.length() - 3) {
                             break;
                         }
                     } else if (isNormalRoll(nextResult) && isStrike(nextResult2)) {
                         updateTotalScore(computePins(nextResult) + computeStrike(result) * 2);
-                        if (roll == scoreCard.length() - 3 && result == 'X') {
+                        if (roll == scoreCard.length() - 3) {
                             break;
                         }
                     } else if (isNormalRoll(nextResult) && isSpare(nextResult2)) {
                         updateTotalScore(computeStrike(result) + computeSpare(nextResult2));
-                        if (roll == scoreCard.length() - 3 && result == 'X') {
+                        if (roll == scoreCard.length() - 3) {
                             break;
                         }
                     } else if (isNormalRoll(nextResult) && isNormalRoll(nextResult2)) {
                         updateTotalScore(computeStrike(result) + computePins(nextResult) + computePins(nextResult2));
-                        if (roll == scoreCard.length() - 3 && result == 'X') {
+                        if (roll == scoreCard.length() - 3) {
                             break;
                         }
                     }
