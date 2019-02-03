@@ -106,7 +106,7 @@ public class ScoreCard {
                     char nextResult2 = scoreCard.charAt(roll + 2);
                     if (isStrike(nextResult) && isStrike(nextResult2)) {
                         updateTotalScore(computeStrike(result) * 3);
-                        if (roll == scoreCard.length() - 3 && result == 'X') {
+                        if (roll == scoreCard.length() - 3) {
                             break;
                         }
                     } else if (isStrike(nextResult) && !isStrike(nextResult2)) {
