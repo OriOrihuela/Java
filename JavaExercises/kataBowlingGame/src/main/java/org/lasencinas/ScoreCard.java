@@ -36,8 +36,7 @@ public class ScoreCard {
     public boolean isNormalRoll(char roll) {
         if (roll != 'X' && roll != '/') {
             return true;
-        }
-        else {
+        } else {
             return false;
         }
     }
@@ -49,8 +48,7 @@ public class ScoreCard {
     public  boolean isStrike(char strike) {
         if (strike == 'X') {
             return true;
-        }
-        else {
+        } else {
             return false;
         }
     }
@@ -66,8 +64,7 @@ public class ScoreCard {
     public  boolean isSpare(char spare) {
         if (spare == '/') {
             return true;
-        }
-        else {
+        } else {
             return false;
         }
     }
@@ -131,7 +128,7 @@ public class ScoreCard {
                         }
                     }
                 }
-                // Here we check if the result of the actual roll is any normal pin.
+                // Here we check if the result of the actual are some normal pins.
                 else if (isNormalRoll(result)) {
                     if (roll == 20 && scoreCard.charAt(19) == '/') {
                         break;
