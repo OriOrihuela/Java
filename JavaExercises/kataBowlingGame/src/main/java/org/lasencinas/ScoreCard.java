@@ -128,7 +128,7 @@ public class ScoreCard {
                         }
                     }
                 }
-                // Here we check if the result of the actual are some normal pins.
+                // Here we check if the result of the actual roll are some normal pins.
                 else if (isNormalRoll(result)) {
                     if (roll == 20 && scoreCard.charAt(19) == '/') {
                         break;
