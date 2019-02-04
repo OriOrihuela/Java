@@ -98,4 +98,11 @@ public class ScoreCardTest {
         int totalScore = scoreCard.calculateScore(punctuation);
         assertEquals(175, totalScore);
     }
+
+    @Test
+    public void calculateScoreTest9() {
+        String punctuation = "1/27XXX-/X3/X11-";
+        int totalScore = scoreCard.calculateScore(punctuation);
+        assertEquals(165, totalScore);
+    }
 }
