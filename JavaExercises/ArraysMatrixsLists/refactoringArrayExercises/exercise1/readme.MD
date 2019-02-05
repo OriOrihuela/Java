@@ -1,0 +1,1 @@
+#### Write a program that stores the annual sales of each of the five stores of a supermarket chain in an Array of five elements (assign them to the Array when declaring it). Next, calculate which store sold the least, which one sold the most, and the total sales amount of the five stores.
