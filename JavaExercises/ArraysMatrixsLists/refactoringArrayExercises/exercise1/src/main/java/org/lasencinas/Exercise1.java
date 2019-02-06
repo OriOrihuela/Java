@@ -3,26 +3,26 @@ package org.lasencinas;
 
 public class Exercise1 {
     public static void main(String[] args) {
-        double[] ventas = {8000, 320.35, 930, 1020.99, 650};
-        double mayor = ventas[0];
-        double menor = ventas[0];
+        double[] sales = {8000, 320.35, 930, 1020.99, 650};
+        double major = sales[0];
+        double minor = sales[0];
         double total = 0;
-        int posicionMayor = 0;
-        int posicionMenor = 0;
-        for (int i = 0; i < ventas.length; i++) {
-            if (ventas[i] > mayor) {
-                mayor = ventas[i];
-                posicionMayor = i;
-            } else if (ventas[i] < menor) {
-                menor = ventas[i];
-                posicionMenor = i;
-            } total += ventas[i];
+        int majorIndex = 0;
+        int minorIndex = 0;
+        for (int i = 0; i < sales.length; i++) {
+            if (sales[i] > major) {
+                major = sales[i];
+                majorIndex = i;
+            } else if (sales[i] < minor) {
+                minor = sales[i];
+                minorIndex = i;
+            } total += sales[i];
         }
-        System.out.println("La tienda que menos ha vendido fue la " + (posicionMenor + 1) + ", " +
-                "que vendió " + menor + " €");
-        System.out.println("La tienda que mas ha vendido fue la " + (posicionMayor + 1) + ", " +
-                "que vendió " + mayor + " €");
-        System.out.println("El total de las ventas es: " + total + " €");
+        System.out.println("The store that sold less was " + (minorIndex + 1) + ", " +
+                "which sold " + minor + " €");
+        System.out.println("The store that sold more was " + (majorIndex + 1) + ", " +
+                "which sold " + major + " €");
+        System.out.println("The total amount of sales is: " + total + " €");
     }
 }
 
