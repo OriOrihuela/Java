@@ -7,12 +7,12 @@ public class Exercise3 {
     public static void main(String[] args) {
         int[] vector = new int[30];
         Random aleatorio = new Random();
-        for (int i = 0; i < vector.length; i++) {
-            vector[i] = aleatorio.nextInt(20) + 1;
+        for (int index = 0; index < vector.length; index++) {
+            vector[index] = aleatorio.nextInt(20) + 1;
         }
         Arrays.sort(vector);
-        for (int numero : vector) {
-            System.out.println(numero);
+        for (int number : vector) {
+            System.out.println(number);
         }
     }
 }
