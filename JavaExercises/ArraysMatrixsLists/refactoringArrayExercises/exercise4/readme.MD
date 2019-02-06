@@ -1,0 +1,1 @@
+#### Write a program that generates and writes a unitary matrix of order 10. A unitary matrix of order 10 is a matrix of 10x10 in which all the elements are worth 0, except those of the main diagonal that are worth 1. The main diagonal is the one that it goes from the upper left corner to the lower right corner.
