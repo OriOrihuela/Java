@@ -87,6 +87,14 @@ public class ScoreCard {
             char result = scoreCard.charAt(roll);
 
             try {
+                // Here we check if the result of the actual roll are some normal pins.
+                if (isNormalRoll(result)) {
+                    if (roll == 20 && scoreCard.charAt(19) == '/') {
+                        break;
+                    } else if (roll == scoreCard.length() - 2 && scoreCard.charAt(roll - 1) == 'X') {
+                        break;
+                    } updateTotalScore(computePins(result));
+                }
                 // Here we check if the result of the actual roll is a Spare.
                 if (isSpare(result)) {
                     char nextResult = scoreCard.charAt(roll + 1);
@@ -103,37 +111,19 @@ public class ScoreCard {
                     char nextResult2 = scoreCard.charAt(roll + 2);
                     if (isStrike(nextResult) && isStrike(nextResult2)) {
                         updateTotalScore(computeStrike(result) * 3);
-                        if (roll == scoreCard.length() - 3) {
-                            break;
-                        }
-                    } else if (isStrike(nextResult) && !isStrike(nextResult2)) {
+                    }
+                    else if (isStrike(nextResult) && !isStrike(nextResult2)) {
                         updateTotalScore((computeStrike(result) * 2) + computePins(nextResult2));
-                        if (roll == scoreCard.length() - 3) {
-                            break;
-                        }
-                    } else if (isNormalRoll(nextResult) && isStrike(nextResult2)) {
+                    }
+                    else if (isNormalRoll(nextResult) && isStrike(nextResult2)) {
                         updateTotalScore(computePins(nextResult) + computeStrike(result) * 2);
-                        if (roll == scoreCard.length() - 3) {
-                            break;
-                        }
-                    } else if (isNormalRoll(nextResult) && isSpare(nextResult2)) {
+                    }
+                    else if (isNormalRoll(nextResult) && isSpare(nextResult2)) {
                         updateTotalScore(computeStrike(result) + computeSpare(nextResult2));
-                        if (roll == scoreCard.length() - 3) {
-                            break;
-                        }
-                    } else if (isNormalRoll(nextResult) && isNormalRoll(nextResult2)) {
+                    }
+                    else if (isNormalRoll(nextResult) && isNormalRoll(nextResult2)) {
                         updateTotalScore(computeStrike(result) + computePins(nextResult) + computePins(nextResult2));
-                        if (roll == scoreCard.length() - 3) {
-                            break;
-                        }
                     }
-                }
-                // Here we check if the result of the actual roll are some normal pins.
-                else if (isNormalRoll(result)) {
-                    if (roll == 20 && scoreCard.charAt(19) == '/') {
-                        break;
-                    }
-                    updateTotalScore(computePins(result));
                 }
             } catch (IndexOutOfBoundsException e) {
                 return getTotalScore();
