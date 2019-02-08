@@ -2,6 +2,7 @@ package org.lasencinas;
 
 import java.io.*;
 import java.net.*;
+import java.util.Scanner;
 
 public class Server {
     private ServerSocket serverSocket;
@@ -43,7 +44,7 @@ public class Server {
     }
 
     public void toSend() {
-        String web = "HTTP/1.1 200 OK\\nContent-Type: text/html; charset=UTF-8\\n\\n<html>Hello " +
+        String web = "HTTP/1.1 200 OK\nContent-Type: text/html; charset=UTF-8\n\n<html>Hello " +
                 socket.getInetAddress().getHostName() + "</html>";
         try {
             bufferExit.write(web.getBytes());
@@ -77,6 +78,17 @@ public class Server {
             } finally {
                 toClose();
             }
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner keyboard = new Scanner(System.in);
+        Server server = new Server();
+        System.out.println("Introduce the port: ");
+        int port = keyboard.nextInt();
+        keyboard.close();
+        while(true) {
+            server.runServer(port);
         }
     }
 }
