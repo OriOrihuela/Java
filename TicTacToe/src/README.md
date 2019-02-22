@@ -1,3 +1,3 @@
 # TicTacToe
 
-### Project done about the famouse game.
+### Project done about the famous game.
