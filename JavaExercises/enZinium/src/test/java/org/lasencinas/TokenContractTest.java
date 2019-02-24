@@ -40,11 +40,10 @@ public class TokenContractTest {
 
     @Test
     public void payable_test() {
-
         Address rick = new Address();
         rick.generateKeyPair();
         TokenContract ricknillos = new TokenContract(rick);
-        ricknillos.addOwner(rick.getPK(), 100d);
+        ricknillos.setTotalSupply(100);
         assertEquals(100, ricknillos.totalSupply(), 0.01);
     }
 }
