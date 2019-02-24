@@ -81,7 +81,7 @@ public class TokenContract {
 
     public int numOwners() {
         int integerToReturn = 0;
-        for (PublicKey key : this.balances.keySet()) {
+        for (PublicKey key : getBalances().keySet()) {
             integerToReturn += 1;
         }
         return integerToReturn;
@@ -119,6 +119,15 @@ public class TokenContract {
             getBalances().put(recipient, balanceOf(recipient) + units);
         } catch (Exception e) {
             ;
+        }
+    }
+
+    public void owners() {
+        for (Map.Entry<PublicKey, Double> PK : getBalances().entrySet()) {
+            if (getBalances().containsKey(getOwnerPK())) {
+                continue;
+            }
+            System.out.println("Owner: " + PK.getKey().hashCode() + PK.getValue() + " " + getSymbol());
         }
     }
 }
