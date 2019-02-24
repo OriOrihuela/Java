@@ -39,7 +39,7 @@ public class TokenContractTest {
     }
 
     @Test
-    public void payable_test() {
+    public void setTotalSupplyTest() {
         Address rick = new Address();
         rick.generateKeyPair();
         TokenContract ricknillos = new TokenContract(rick);
