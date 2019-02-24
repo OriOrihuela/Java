@@ -125,7 +125,7 @@ public class TokenContract {
     public void owners() {
         for (Map.Entry<PublicKey, Double> PK : getBalances().entrySet()) {
             if (getBalances().containsKey(getOwnerPK())) {
-                continue;
+                ;
             }
             System.out.println("Owner: " + PK.getKey().hashCode() + PK.getValue() + " " + getSymbol());
         }
