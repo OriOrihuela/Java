@@ -94,4 +94,21 @@ public class TokenContract {
             return 0;
         }
     }
+
+    private void require(Boolean holds) throws Exception {
+        if (holds) {}
+        else {
+            throw new  Exception();
+        }
+    }
+
+    public void transfer(PublicKey recipient, double units) {
+        try {
+            require(balanceOf(getOwnerPK()) > units);
+            getBalances().put(getOwnerPK(), balanceOf(getOwnerPK()) - units);
+            getBalances().put(recipient, balanceOf(recipient) + units);
+        } catch (Exception e) {
+            ;
+        }
+    }
 }
