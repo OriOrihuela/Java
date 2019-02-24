@@ -14,7 +14,7 @@ public class TokenContract {
     private String symbol = null;
     private double totalSupply = 0;
     private PublicKey ownerPK = null;
-    private String tokenSymbol = "USD";
+    private String tokenSymbol = "RNiLL";
 
     private Map<PublicKey, Double> balances = new HashMap<>();
 
@@ -76,7 +76,7 @@ public class TokenContract {
     }
 
     public void addOwner(PublicKey PK, Double units) {
-        this.balances.put(PK, units);
+        getBalances().putIfAbsent(PK, units);
     }
 
     public int numOwners() {
