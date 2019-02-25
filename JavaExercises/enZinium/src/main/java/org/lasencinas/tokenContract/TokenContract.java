@@ -80,11 +80,7 @@ public class TokenContract {
     }
 
     public int numOwners() {
-        int integerToReturn = 0;
-        for (PublicKey key : getBalances().keySet()) {
-            integerToReturn += 1;
-        }
-        return integerToReturn;
+        return getBalances().size();
     }
 
     public double balanceOf(PublicKey owner) {
