@@ -123,11 +123,11 @@ public class TokenContract {
     }
 
     public void owners() {
-        for (Map.Entry<PublicKey, Double> PK : getBalances().entrySet()) {
-            if (getBalances().containsKey(getOwnerPK())) {
-                ;
+        for (Map.Entry <PublicKey, Double> PK : getBalances().entrySet()) {
+            if (PK.getKey().hashCode() != getOwnerPK().hashCode()) {
+                System.out.println("Owner: " + PK.getKey().hashCode() + " " + PK.getValue() + " " + getSymbol());
             }
-            System.out.println("Owner: " + PK.getKey().hashCode() + PK.getValue() + " " + getSymbol());
+
         }
     }
 }
