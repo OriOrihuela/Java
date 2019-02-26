@@ -19,7 +19,6 @@ public class TokenContract {
     private Map<PublicKey, Double> balances = new HashMap<>();
 
 
-
     /* ---- Constructor ---- */
     public TokenContract(Address address) {
         this.ownerPK = address.getPK();
@@ -28,7 +27,7 @@ public class TokenContract {
     }
 
 
-    /* ---- Getters & Setters ---- */
+    /* ---- Getters ---- */
     public PublicKey getOwnerPK() {
         return ownerPK;
     }
@@ -37,24 +36,8 @@ public class TokenContract {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public String getSymbol() {
         return symbol;
-    }
-
-    public void setSymbol(String symbol) {
-        this.symbol = symbol;
-    }
-
-    public double totalSupply() {
-        return totalSupply;
-    }
-
-    public void setTotalSupply(double totalSupply) {
-        this.totalSupply = totalSupply;
     }
 
     public String symbol() {
@@ -63,6 +46,24 @@ public class TokenContract {
 
     public Map<PublicKey, Double> getBalances() {
         return balances;
+    }
+
+    public double totalSupply() {
+        return totalSupply;
+    }
+
+
+    /* ---- Setters ---- */
+    public void setSymbol(String symbol) {
+        this.symbol = symbol;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setTotalSupply(double totalSupply) {
+        this.totalSupply = totalSupply;
     }
 
 
@@ -92,9 +93,9 @@ public class TokenContract {
     }
 
     private void require(Boolean holds) throws Exception {
-        if (holds) {}
-        else {
-            throw new  Exception();
+        if (holds) {
+        } else {
+            throw new Exception();
         }
     }
 
@@ -119,7 +120,7 @@ public class TokenContract {
     }
 
     public void owners() {
-        for (Map.Entry <PublicKey, Double> PK : getBalances().entrySet()) {
+        for (Map.Entry<PublicKey, Double> PK : getBalances().entrySet()) {
             if (PK.getKey().hashCode() != getOwnerPK().hashCode()) {
                 System.out.println("Owner: " + PK.getKey().hashCode() + " " + PK.getValue() + " " + getSymbol());
             }
