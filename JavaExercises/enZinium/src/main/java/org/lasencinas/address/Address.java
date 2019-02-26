@@ -2,6 +2,7 @@ package org.lasencinas.address;
 
 import java.security.PrivateKey;
 import java.security.PublicKey;
+
 import org.lasencinas.gensig.GenSig;
 
 public class Address {
@@ -58,7 +59,7 @@ public class Address {
     @Override
     public String toString() {
         return "\n" + "PK = " + getPK().hashCode() + "\n" +
-                "Balance = " + getBalance() + " " +  getSymbol();
+                "Balance = " + getBalance() + " " + getSymbol();
     }
 }
 
