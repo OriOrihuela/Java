@@ -6,7 +6,7 @@ import org.lasencinas.tokenContract.TokenContract;
 
 /**
  * Contratos inteligentes con enZinium.
- *
+ * <p>
  * Rick va a organizar un concieto de Los Ricknillos
  * y quiere poner a la venta 100 entradas en nuestra
  * plataforma enZinium.
@@ -22,7 +22,7 @@ import org.lasencinas.tokenContract.TokenContract;
 
 public class App {
 
-    public static void main( String[] args ) {
+    public static void main(String[] args) {
         /**
          * Crea una Address en nuestro sistema para Rick
          * Genera las claves privada y publica de la direccion
@@ -41,7 +41,7 @@ public class App {
          */
 
         System.out.println("\n" + "Address de Rick" + "\n" +
-                "==============="        );
+                "===============");
         System.out.println(rick.toString());
 
         /**
@@ -57,10 +57,10 @@ public class App {
         jen.generateKeyPair();
 
         System.out.println("\n" + "Address de Morty" + "\n" +
-                "==============="        );
+                "===============");
         System.out.println(morty.toString());
         System.out.println("\n" + "Address de Jen" + "\n" +
-                "==============="        );
+                "===============");
         System.out.println(jen.toString());
 
         /**
@@ -94,7 +94,7 @@ public class App {
         ricknillos.setTotalSupply(100);
 
         System.out.println("\n" + "Contrato de los Ricknillos" + "\n" +
-                "=========================="        );
+                "==========================");
         System.out.println(ricknillos.toString());
 
         /**
@@ -135,7 +135,7 @@ public class App {
          * el propietario, devuelve cero.
          */
         System.out.println("\n" + "Consulta de balances" + "\n" +
-                "===================="        );
+                "====================");
 
         System.out.println("\n" + "Numero de propietarios: " + ricknillos.numOwners());
 
@@ -169,7 +169,7 @@ public class App {
          */
 
         System.out.println("\n" + "Transferencia de entradas" + "\n" +
-                "========================="        );
+                "=========================");
 
         ricknillos.transfer(morty.getPK(), 2d);
 
@@ -214,7 +214,7 @@ public class App {
          */
 
         System.out.println("\n" + "Reventa de entradas" + "\n" +
-                "==================="        );
+                "===================");
 
         ricknillos.transfer(morty.getPK(), jen.getPK(), 1d);
 
@@ -238,7 +238,7 @@ public class App {
          */
 
         System.out.println("\n" + "Lista de compradores" + "\n" +
-                "===================="        );
+                "====================");
         ricknillos.owners();
     }
 }
