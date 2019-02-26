@@ -15,21 +15,17 @@ public class TokenContractTest {
     private List<Address> balances = null;
 
     @Before
-    public void __init__(){
+    public void __init__() {
         balances = new ArrayList<>();
     }
 
     @Test
-    public void constructorTest(){
+    public void constructorTest() {
         assertNotNull(balances);
     }
 
     @Test
     public void gettersAndSettersTest() {
-
-        /**
-         * Elimino los balances del commit anterior ya que no forman parte del constructor, error mío ^^'.
-         */
 
         Address address2 = new Address();
         address2.setSymbol("Mama");
