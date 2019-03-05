@@ -1,31 +1,33 @@
 package org.lasencinas.elipse;
 
-public class Elipse {
+import org.lasencinas.figuraGeometrica.FiguraGeometrica;
+
+public class Elipse extends FiguraGeometrica {
 
     /* ---- Properties of the class ---- */
-    private String nombre = null;
     private double ejeMayor = 0d;
     private double ejeMenor = 0d;
 
 
     /* ---- Constructor ---- */
+    public Elipse() {
+        super();
+    }
+
     public Elipse(double ejeMayor, double ejeMenor) {
+        super();
         this.ejeMayor = ejeMayor;
         this.ejeMenor = ejeMenor;
     }
 
     public Elipse(String nombre, double ejeMayor, double ejeMenor) {
-        this.nombre = nombre;
+        super(nombre);
         this.ejeMayor = ejeMayor;
         this.ejeMenor = ejeMenor;
     }
 
 
     /* ---- Getters ---- */
-    public String getNombre() {
-        return nombre;
-    }
-
     public double getEjeMayor() {
         return ejeMayor;
     }
@@ -36,10 +38,6 @@ public class Elipse {
 
 
     /* ---- Setters ---- */
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
     public void setEjeMayor(double ejeMayor) {
         this.ejeMayor = ejeMayor;
     }
@@ -50,4 +48,9 @@ public class Elipse {
 
 
     /* ---- Main methods ---- */
+    @Override
+    public double area() {
+        double PI = Math.PI;
+        return PI * getEjeMayor() * getEjeMenor();
+    }
 }
