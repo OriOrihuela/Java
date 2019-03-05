@@ -1,42 +1,44 @@
 package org.lasencinas.circulo;
 
-public class Circulo {
+import org.lasencinas.figuraGeometrica.FiguraGeometrica;
+
+public class Circulo extends FiguraGeometrica {
 
     /* ---- Properties of the class ---- */
-    private String nombre = null;
     private double radio = 0d;
 
 
     /* ---- Constructor ---- */
+    public Circulo() {
+        super();
+    }
     public Circulo(double radio) {
+        super();
         this.radio = radio;
     }
 
     public Circulo(String nombre, double radio) {
-        this.nombre = nombre;
+        super(nombre);
         this.radio = radio;
     }
 
 
     /* ---- Getters ---- */
-    public String getNombre() {
-        return nombre;
-    }
-
     public double getRadio() {
         return radio;
     }
 
 
     /* ---- Setters ----- */
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
     public void setRadio(double radio) {
         this.radio = radio;
     }
 
 
     /* ---- Main methods ---- */
+    @Override
+    public double area() {
+        double PI = Math.PI;
+        return PI * Math.pow(radio,2);
+    }
 }
