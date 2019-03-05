@@ -1,31 +1,33 @@
 package org.lasencinas.rectangulo;
 
-public class Rectangulo {
+import org.lasencinas.figuraGeometrica.FiguraGeometrica;
+
+public class Rectangulo extends FiguraGeometrica {
 
     /* ---- Properties of the class ---- */
-    private String nombre = null;
     private double lado = 0d;
     private double base = 0d;
 
 
     /* ---- Constructor ---- */
+    public Rectangulo() {
+        super();
+    }
+
     public Rectangulo(double lado, double base) {
+        super();
         this.lado = lado;
         this.base = base;
     }
 
     public Rectangulo(String nombre, double lado, double base) {
-        this.nombre = nombre;
+        super(nombre);
         this.lado = lado;
         this.base = base;
     }
 
 
     /* ---- Getters ---- */
-    public String getNombre() {
-        return nombre;
-    }
-
     public double getLado() {
         return lado;
     }
@@ -36,10 +38,6 @@ public class Rectangulo {
 
 
     /* ---- Setters ---- */
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
     public void setLado(double lado) {
         this.lado = lado;
     }
@@ -50,4 +48,8 @@ public class Rectangulo {
 
 
     /* ---- Main methods ---- */
+    @Override
+    public double area() {
+        return getBase() * getLado();
+    }
 }
