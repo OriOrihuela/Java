@@ -1,12 +1,15 @@
 package org.lasencinas.figuraGeometrica;
 
-public class FiguraGeometrica {
+public abstract class FiguraGeometrica {
 
     /* ---- Propiedades de la clase ---- */
     private String nombre = null;
 
 
     /* ---- Constructor ---- */
+    public FiguraGeometrica() {
+        this.nombre = "unknown";
+    }
     public FiguraGeometrica(String nombre) {
         this.nombre = nombre;
     }
@@ -25,7 +28,5 @@ public class FiguraGeometrica {
 
 
     /* ---- Main behaviours ---- */
-    public double area() {
-        return 0;
-    }
+    public abstract double area();
 }
