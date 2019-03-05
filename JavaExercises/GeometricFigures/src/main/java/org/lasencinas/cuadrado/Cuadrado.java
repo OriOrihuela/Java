@@ -1,43 +1,45 @@
 package org.lasencinas.cuadrado;
 
 
-public class Cuadrado {
+import org.lasencinas.figuraGeometrica.FiguraGeometrica;
+
+public class Cuadrado extends FiguraGeometrica {
 
     /* ---- Properties of the class ---- */
-    private String nombre = null;
     private double lado = 0d;
 
 
     /* ---- Constructor ---- */
+    public Cuadrado() {
+        super();
+    }
+
     public Cuadrado(double lado) {
+        super();
         this.lado = lado;
     }
 
     public Cuadrado(String nombre, double lado) {
-        this.nombre = nombre;
+        super(nombre);
         this.lado = lado;
     }
 
 
     /* ---- Getters ---- */
-    public String getNombre() {
-        return nombre;
-    }
-
     public double getLado() {
         return lado;
     }
 
 
     /* ---- Setters ---- */
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
     public void setLado(double lado) {
         this.lado = lado;
     }
 
 
     /* ---- Main methods ---- */
+    @Override
+    public double area() {
+        return Math.pow(getLado(), 2);
+    }
 }
