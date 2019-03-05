@@ -10,6 +10,7 @@ public abstract class FiguraGeometrica {
     public FiguraGeometrica() {
         this.nombre = "unknown";
     }
+
     public FiguraGeometrica(String nombre) {
         this.nombre = nombre;
     }
