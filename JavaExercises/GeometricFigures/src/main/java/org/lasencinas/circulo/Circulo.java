@@ -12,6 +12,7 @@ public class Circulo extends FiguraGeometrica {
     public Circulo() {
         super();
     }
+
     public Circulo(double radio) {
         super();
         this.radio = radio;
@@ -39,6 +40,6 @@ public class Circulo extends FiguraGeometrica {
     @Override
     public double area() {
         double PI = Math.PI;
-        return PI * Math.pow(radio,2);
+        return PI * Math.pow(getRadio(),2);
     }
 }
