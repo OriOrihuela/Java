@@ -52,7 +52,6 @@ public class TokenContract {
         return totalSupply;
     }
 
-
     /* ---- Setters ---- */
     public void setSymbol(String symbol) {
         this.symbol = symbol;
@@ -126,5 +125,15 @@ public class TokenContract {
             }
 
         }
+    }
+
+    public double totalTokensSold() {
+        double totalTokensSold = 0d;
+        for (PublicKey PK : getBalances().keySet()) {
+            if (!PK.equals(getOwnerPK())) {
+                totalTokensSold += getBalances().get(PK);
+            }
+        }
+        return totalTokensSold;
     }
 }
