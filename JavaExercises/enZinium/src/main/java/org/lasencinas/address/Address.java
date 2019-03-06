@@ -61,5 +61,9 @@ public class Address {
         return "\n" + "PK = " + getPK().hashCode() + "\n" +
                 "Balance = " + getBalance() + " " + getSymbol();
     }
+
+    public void addEZI(double EZI) {
+        this.balance += EZI;
+    }
 }
 
