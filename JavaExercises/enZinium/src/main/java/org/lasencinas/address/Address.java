@@ -4,6 +4,7 @@ import java.security.PrivateKey;
 import java.security.PublicKey;
 
 import org.lasencinas.gensig.GenSig;
+import org.lasencinas.tokenContract.TokenContract;
 
 public class Address {
 
@@ -64,6 +65,17 @@ public class Address {
 
     public void addEZI(double EZI) {
         this.balance += EZI;
+    }
+
+    public void transferEZI(double EZI) {
+        this.balance += EZI;
+    }
+
+    public void send(TokenContract contract, Double EZI) {
+        if (EZI <= this.balance) {
+            contract.payable(getPK(), EZI);
+            this.balance -= EZI;
+        }
     }
 }
 
