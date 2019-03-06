@@ -251,5 +251,24 @@ public class App {
 
         System.out.println("\n" + "Total de asistentes: "
                 + ricknillos.totalTokensSold() + "\n");
+
+        /**
+         * AHORA A POR EL EXCEL·LENT !!
+         * CAN DO !!
+         */
+
+        /**
+         * Vamos a comprar entradas con nuestra moneda enZinium.
+         *
+         * Añade 20 enZiniums a la direccion de Morty:
+         *
+         * addEZI()
+         * @param cantidad de enziniums
+         */
+        morty.addEZI(20d);
+
+        System.out.println("\n" + "Recarga eZis de Morty" + "\n" +
+                "====================="        );
+        System.out.println(morty.toString());
     }
 }
