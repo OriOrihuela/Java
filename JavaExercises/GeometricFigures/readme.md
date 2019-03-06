@@ -23,7 +23,7 @@ Design a program that uses the mechanism of Inheritance in Object Oriented Progr
 ## Tasks
 1. Define a `Circle` class to instantiate objects of this geometric figure, which allows to calculate its area from its radius.
 2. Define a `Rectangle` class to instantiate objects of this geometric figure, which allows to calculate its area from its sides.
-3. Write a program that stores objects of type `Circle` and `Rectangle` in an `Array`.
+3. Write a program that stores objects of type `Circle` and `Rectangle` in an `array`.
     - The program instantiates objects of type Circle and type Rectangle, defines its properties, and adds them to an Array.
     - Next, it shows on screen the name and area of all the figures stored in the array.
 4. Now define a `Square` class to instantiate objects of this geometric figure, which allows you to calculate its area from its sides. 
