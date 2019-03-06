@@ -14,13 +14,16 @@ public class TokenContract {
     private String symbol = null;
     private double totalSupply = 0;
     private PublicKey ownerPK = null;
+    private Address owner = null;
     private String tokenSymbol = "RNiLL";
+    private double tokenPrice = 5;
 
     private Map<PublicKey, Double> balances = new HashMap<>();
 
 
     /* ---- Constructor ---- */
     public TokenContract(Address address) {
+        this.owner = address;
         this.ownerPK = address.getPK();
         this.symbol = address.getSymbol();
         this.totalSupply = address.getBalance();
@@ -52,6 +55,10 @@ public class TokenContract {
         return totalSupply;
     }
 
+    public double getTokenPrice() {
+        return tokenPrice;
+    }
+
     /* ---- Setters ---- */
     public void setSymbol(String symbol) {
         this.symbol = symbol;
@@ -65,6 +72,9 @@ public class TokenContract {
         this.totalSupply = totalSupply;
     }
 
+    public void setTokenPrice(double tokenPrice) {
+        this.tokenPrice = tokenPrice;
+    }
 
     /* ----- Métodos principales ---- */
     @Override
@@ -92,9 +102,10 @@ public class TokenContract {
     }
 
     private void require(Boolean holds) throws Exception {
-        if (holds) {
-        } else {
+        if (!holds) {
             throw new Exception();
+        } else {
+            // Pass
         }
     }
 
@@ -135,5 +146,16 @@ public class TokenContract {
             }
         }
         return totalTokensSold;
+    }
+
+    public void payable(PublicKey recipient, Double enziniums) {
+        Double units = Math.floor(enziniums / tokenPrice);
+        try {
+            require(enziniums >= getTokenPrice());
+            transfer(recipient, enziniums);
+            this.owner.transferEZI(enziniums);
+        } catch (Exception e) {
+            // Pass
+        }
     }
 }
