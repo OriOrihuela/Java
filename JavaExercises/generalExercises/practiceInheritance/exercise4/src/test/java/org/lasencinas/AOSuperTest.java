@@ -9,5 +9,11 @@ public class AOSuperTest {
         AOSub aoSub = new AOSub();
         aoSub.print();
         aoSub.callOverridenPrint();
+
+        /**
+         * Inside AOSuper.print()
+         * Inside AOSub.print()
+         * Inside AOSuper.print()
+         */
     }
 }
