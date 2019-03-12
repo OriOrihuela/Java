@@ -25,5 +25,12 @@ public class LateBindingTest {
 
         // Will access LateBindingSub.print() because lbSuper is referring to a LateBindingSub object
         lbSuper.print();
+
+        /**
+         * Inside LateBindingSuper.print()
+         * Inside LateBindingSub.print()
+         * Inside LateBindingSub.print()
+         * Inside LateBindingSub.print()
+         */
     }
 }
