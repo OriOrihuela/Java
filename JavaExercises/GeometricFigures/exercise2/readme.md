@@ -1,10 +1,11 @@
-# Inheritance in Java
+# Inheritance and Interfaces in Java
 
 ## Concepts
 - Inheritance.
 - Abstract classes.
 - Arrays of objects.
 - Variable-length arrays.
+- Interfaces implementation
 
 ## SOLID Principles
 - These principles guide the agile design of your application:
@@ -19,7 +20,7 @@ Design a program that uses the mechanism of Inheritance in Object Oriented Progr
 1. Write a program that creates objects of the geometric figures that are proposed next. 
 2. Add them to an array. 
 3. Scroll through it showing the name of the figure and the area of all of them in the console the objects included in it.
-
+4. Create two interfaces: `Drawable` and `Drawables`, and make some geometric figures implement them.
 ## Tasks
 1. Define a `Circle` class to instantiate objects of this geometric figure, which allows to calculate its area from its radius.
 2. Define a `Rectangle` class to instantiate objects of this geometric figure, which allows to calculate its area from its sides.
@@ -35,3 +36,5 @@ Principle* **(OCP)**: software entities (classes, modules, functions, etc.) shou
     the need to alter the code, *but simply extend it with new classes*.
     - To verify that the new design you have made is correct, now add a new class to instantiate `Ellipse` objects. Instance this object 
     in the main program, add it to the array of figures and visualize its area next to the rest of the objects in the array.
+5. Creating two interfaces called `Drawable` and `Drawables`, make some geometric figures implement them.
+6. Make the code from the Java class `MainFiguras` work, just to check the correct functioning of the **interfaces implementation**.
