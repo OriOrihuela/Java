@@ -47,4 +47,8 @@ public class Circulo extends FiguraGeometrica implements Drawable {
     public void draw() {
         System.out.println("Y así se dibuja un " + this.getNombre() + " to maquinero");
     }
+
+    public void applyTheme() {
+        System.out.println("Aplicamos el color Dark Knight al " + this.getNombre() + ". ¡Qué chulo!");
+    }
 }
