@@ -8,7 +8,7 @@ import org.lasencinas.figuraGeometrica.FiguraGeometrica;
 
 import java.util.ArrayList;
 
-public class Main {
+public class MainFiguras {
 
     public static void main(String[] args) {
 
