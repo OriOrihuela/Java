@@ -56,6 +56,6 @@ public class Elipse extends FiguraGeometrica implements Drawable {
     }
 
     public void draw() {
-        System.out.println("Y así se dibuja un " + this.getNombre() + " to maquinera");
+        System.out.println("Y así se dibuja una " + this.getNombre() + " to maquinera");
     }
 }
