@@ -1,8 +1,9 @@
 package org.lasencinas.circulo;
 
+import org.lasencinas.draw.Drawable;
 import org.lasencinas.figuraGeometrica.FiguraGeometrica;
 
-public class Circulo extends FiguraGeometrica {
+public class Circulo extends FiguraGeometrica implements Drawable {
 
     /* ---- Properties of the class ---- */
     private double radio = 0d;

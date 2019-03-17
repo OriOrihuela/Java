@@ -1,8 +1,9 @@
 package org.lasencinas.elipse;
 
+import org.lasencinas.draw.Drawable;
 import org.lasencinas.figuraGeometrica.FiguraGeometrica;
 
-public class Elipse extends FiguraGeometrica {
+public class Elipse extends FiguraGeometrica implements Drawable {
 
     /* ---- Properties of the class ---- */
     private double ejeMayor = 0d;

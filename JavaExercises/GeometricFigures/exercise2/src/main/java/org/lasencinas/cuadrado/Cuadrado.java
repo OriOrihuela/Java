@@ -1,9 +1,10 @@
 package org.lasencinas.cuadrado;
 
 
+import org.lasencinas.draw.Drawable;
 import org.lasencinas.figuraGeometrica.FiguraGeometrica;
 
-public class Cuadrado extends FiguraGeometrica {
+public class Cuadrado extends FiguraGeometrica implements Drawable {
 
     /* ---- Properties of the class ---- */
     private double lado = 0d;

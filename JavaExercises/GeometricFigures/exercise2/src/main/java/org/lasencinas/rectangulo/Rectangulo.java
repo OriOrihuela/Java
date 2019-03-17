@@ -1,8 +1,9 @@
 package org.lasencinas.rectangulo;
 
+import org.lasencinas.draw.Drawable;
 import org.lasencinas.figuraGeometrica.FiguraGeometrica;
 
-public class Rectangulo extends FiguraGeometrica {
+public class Rectangulo extends FiguraGeometrica implements Drawable {
 
     /* ---- Properties of the class ---- */
     private double lado = 0d;
