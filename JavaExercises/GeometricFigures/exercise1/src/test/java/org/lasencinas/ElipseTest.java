@@ -55,4 +55,3 @@ public class ElipseTest {
         assertEquals(157.079, elipse3.area(), 0.01);
     }
 }
-

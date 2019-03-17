@@ -55,4 +55,3 @@ public class RectanguloTest {
         assertEquals(50, rectangulo3.area(), 0.01);
     }
 }
-

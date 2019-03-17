@@ -54,4 +54,3 @@ public class CuadradoTest {
         assertEquals(100, cuadrado3.area(), 0.01);
     }
 }
-
