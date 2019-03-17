@@ -84,7 +84,7 @@ public class DrawablesTest {
     @Test
     public void testAplicarTema() {
 
-        Drawables.aplicarTema(figuras);
+        Drawables.applyThemeDrawables(figuras);
 
     }
 }
