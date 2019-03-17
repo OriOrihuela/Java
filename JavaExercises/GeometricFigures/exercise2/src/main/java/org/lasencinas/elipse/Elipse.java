@@ -54,4 +54,8 @@ public class Elipse extends FiguraGeometrica implements Drawable {
         double PI = Math.PI;
         return PI * getEjeMayor() * getEjeMenor();
     }
+
+    public void draw() {
+        System.out.println("Y así se dibuja un " + this.getNombre() + " to maquinera");
+    }
 }

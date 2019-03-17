@@ -53,4 +53,8 @@ public class Rectangulo extends FiguraGeometrica implements Drawable {
     public double area() {
         return getBase() * getLado();
     }
+
+    public void draw() {
+        System.out.println("Y así se dibuja un " + this.getNombre() + " to maquinero");
+    }
 }

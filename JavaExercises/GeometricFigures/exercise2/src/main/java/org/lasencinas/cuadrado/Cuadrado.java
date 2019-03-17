@@ -43,4 +43,8 @@ public class Cuadrado extends FiguraGeometrica implements Drawable {
     public double area() {
         return Math.pow(getLado(), 2);
     }
+
+    public void draw() {
+        System.out.println("Y así se dibuja un " + this.getNombre() + " to maquinero");
+    }
 }

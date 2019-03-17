@@ -43,4 +43,8 @@ public class Circulo extends FiguraGeometrica implements Drawable {
         double PI = Math.PI;
         return PI * Math.pow(getRadio(), 2);
     }
+
+    public void draw() {
+        System.out.println("Y así se dibuja un " + this.getNombre() + " to maquinero");
+    }
 }
