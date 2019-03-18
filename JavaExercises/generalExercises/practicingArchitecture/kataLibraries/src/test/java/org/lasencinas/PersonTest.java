@@ -1,6 +1,7 @@
 package org.lasencinas;
 
 import static org.junit.Assert.*;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.lasencinas.person.Person;
@@ -39,7 +40,7 @@ public class PersonTest {
     }
 
     @Test
-    public void validateDNITest(){
+    public void validateDNITest() {
 
         // It will print that the DNI corresponds to ... person.
         person.validateDNI("45678921X");
