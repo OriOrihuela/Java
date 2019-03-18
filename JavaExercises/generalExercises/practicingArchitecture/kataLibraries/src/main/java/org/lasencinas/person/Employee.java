@@ -6,7 +6,7 @@ public class Employee extends Person {
 
     /* ---- Properties of the class ---- */
     private int employeeID = 0;
-    private Library idLibrary = null;
+    private int idLibrary = null;
 
 
     /* ---- Constructor ---- */
@@ -20,7 +20,7 @@ public class Employee extends Person {
         return employeeID;
     }
 
-    public Library getIdLibrary() {
+    public int getIdLibrary() {
         return idLibrary;
     }
 
@@ -30,7 +30,7 @@ public class Employee extends Person {
         this.employeeID = employeeID;
     }
 
-    public void setIdLibrary(Library idLibrary) {
+    public void setIdLibrary(int idLibrary) {
         this.idLibrary = idLibrary;
     }
 }
