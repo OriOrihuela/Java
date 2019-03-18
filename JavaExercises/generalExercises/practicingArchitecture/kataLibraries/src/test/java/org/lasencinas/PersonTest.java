@@ -24,4 +24,27 @@ public class PersonTest {
         assertNotNull(person2);
         assertNotNull(person3);
     }
+
+    @Test
+    public void gettersAndSettersTest() {
+        assertEquals("Marta", person.getName());
+        assertEquals("Pepe", person2.getName());
+        assertEquals("Robert", person3.getName());
+
+        person.setDni("12345678Z");
+        assertEquals("12345678Z", person.getDni());
+
+        person3.setBirth("02/08/1993");
+        assertEquals("02/08/1993", person3.getBirth());
+    }
+
+    @Test
+    public void validateDNITest(){
+
+        // It will print that the DNI corresponds to ... person.
+        person.validateDNI("45678921X");
+
+        // It will print that the DNI is invalid.
+        person2.validateDNI("123");
+    }
 }
