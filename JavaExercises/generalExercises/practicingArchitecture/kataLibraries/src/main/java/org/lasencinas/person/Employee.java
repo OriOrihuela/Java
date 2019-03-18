@@ -10,10 +10,8 @@ public class Employee extends Person {
 
 
     /* ---- Constructor ---- */
-    public Employee(String name, String surname, String dni, int employeeID, Library idLibrary) {
+    public Employee(String name, String surname, String dni) {
         super(name, surname, dni);
-        this.employeeID = employeeID;
-        this.idLibrary = idLibrary;
     }
 
 
