@@ -6,7 +6,7 @@ public class Employee extends Person {
 
     /* ---- Properties of the class ---- */
     private int employeeID = 0;
-    private int idLibrary = null;
+    private int idLibrary = 0;
 
 
     /* ---- Constructor ---- */
