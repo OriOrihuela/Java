@@ -56,9 +56,8 @@ public class Person {
     /* ---- Behaviours ---- */
     public void validateDNI(String dni) {
         if (dni.equals(getDni())) {
-            System.out.println("The DNI introduced corresponds to " + getName() + " " + getSurname()+ ".");
-        }
-        else {
+            System.out.println("The DNI introduced corresponds to " + getName() + " " + getSurname() + ".");
+        } else {
             System.out.println("Incorrect DNI, please try again.");
         }
     }
