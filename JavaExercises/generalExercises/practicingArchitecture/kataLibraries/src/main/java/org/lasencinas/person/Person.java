@@ -35,7 +35,7 @@ public class Person {
         return birth;
     }
 
-    public boolean isWantsToBeEmployee() {
+    public boolean wantsToBeEmployee() {
         return wantsToBeEmployee;
     }
 
