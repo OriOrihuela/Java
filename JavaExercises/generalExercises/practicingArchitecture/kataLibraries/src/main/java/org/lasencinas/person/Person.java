@@ -7,6 +7,7 @@ public class Person {
     private String surname = null;
     private String dni = null;
     private String birth = null;
+    private boolean wantsToBeEmployee = false;
 
 
     /* ---- Constructor ---- */
@@ -34,6 +35,9 @@ public class Person {
         return birth;
     }
 
+    public boolean isWantsToBeEmployee() {
+        return wantsToBeEmployee;
+    }
 
     /* ---- Setters ---- */
     public void setName(String name) {
@@ -52,6 +56,9 @@ public class Person {
         this.birth = birth;
     }
 
+    public void setWantsToBeEmployee(boolean wantsToBeEmployee) {
+        this.wantsToBeEmployee = wantsToBeEmployee;
+    }
 
     /* ---- Behaviours ---- */
     public void validateDNI(String dni) {
