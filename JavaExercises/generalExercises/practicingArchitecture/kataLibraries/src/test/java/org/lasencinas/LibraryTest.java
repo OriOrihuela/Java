@@ -55,36 +55,38 @@ public class LibraryTest {
 
     @Test
     public void createAndRemoveEmployeeTest() {
-        Person person = new Person("Pablo", "López", "12345678X");
-        person.setWantsToBeEmployee(true);
+        Employee employee = new Employee("Pablo", "López", "12345678X");
 
         List<Employee> employeeList = new ArrayList<>();
         library.setEmployeeList(employeeList);
 
-        library.getEmployeeList().add(library.createEmployee(person));
+        library.getEmployeeList().add(employee);
         assertEquals(1, library.getEmployeeList().size());
 
-        person.setWantsToBeEmployee(false);
-        /*library.setLibraryWantsToFire(true);
-        assertTrue(library.libraryWantsToFire());*/
-        library.removeEmployee(person);
+        employee.setWantsToBeEmployee(false);
+        assertFalse(employee.wantsToBeEmployee());
+        library.removeEmployee(employee);
         assertEquals(0, library.getEmployeeList().size());
     }
 
     @Test
     public void createAndRemoveMemberTest() {
-        Person person = new Person("Pablo", "López", "12345678X");
-        person.setWantsToBeMember(true);
+        Member member = new Member("Pablo", "López", "12345678X");
 
         List<Member> memberList = new ArrayList<>();
         library.setMemberList(memberList);
 
-        library.getMemberList().add(library.createMember(person));
+        library.getMemberList().add(member);
         assertEquals(1, library.getMemberList().size());
 
-        person.setWantsToBeMember(false);
-        //assertFalse(person.wantsToBeMember());
-        library.getMemberList().remove(library.removeMember(person));
+        member.setWantsToBeMember(false);
+        assertFalse(member.wantsToBeMember());
+        library.removeMember(member);
         assertEquals(0, library.getMemberList().size());
+    }
+
+    @Test
+    public void toStringTest() {
+        System.out.println(library.toString());
     }
 }
