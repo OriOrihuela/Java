@@ -9,6 +9,9 @@ public class PublicEntity {
 
 
     /* ---- Constructor ---- */
+    public PublicEntity() {
+
+    }
     public PublicEntity(int entityCode, String entityName, String address) {
         this.entityCode = entityCode;
         this.entityName = entityName;
@@ -46,6 +49,15 @@ public class PublicEntity {
 
     /* ---- Behaviours ---- */
     public static void showLibrary(Library library) {
-        library.toString();
+        System.out.println(library.toString());
+    }
+
+    @Override
+    public String toString() {
+        return "PublicEntity { " +
+                "entityCode: " + getEntityCode() +
+                ", entityName: '" + getEntityName() + '\'' +
+                ", address: '" + getAddress() + '\'' + " " +
+                '}';
     }
 }
