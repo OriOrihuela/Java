@@ -1,7 +1,5 @@
 package org.lasencinas.person;
 
-import org.lasencinas.publicEntity.Library;
-
 public class Employee extends Person {
 
     /* ---- Properties of the class ---- */
