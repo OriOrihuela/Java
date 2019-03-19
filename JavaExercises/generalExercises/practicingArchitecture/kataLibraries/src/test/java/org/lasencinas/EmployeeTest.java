@@ -37,5 +37,8 @@ public class EmployeeTest {
 
         employee3.setBirth("02/08/1993");
         assertEquals("02/08/1993", employee3.getBirth());
+
+        employee2.setEmployeeID(020);
+        assertEquals(020, employee2.getEmployeeID());
     }
 }
