@@ -56,6 +56,6 @@ public class PublicEntity {
     public String toString() {
         return "entityCode: " + getEntityCode() +
                 "\n" + "entityName: '" + getEntityName() + '\'' +
-                "\n" + "address: '" + getAddress() + '\'';
+                "\n" + "address: '" + getAddress() + '\'' + "\n";
     }
 }
