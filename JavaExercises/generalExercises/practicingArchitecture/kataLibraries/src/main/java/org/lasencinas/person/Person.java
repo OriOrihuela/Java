@@ -8,6 +8,7 @@ public class Person {
     private String dni = null;
     private String birth = null;
     private boolean wantsToBeEmployee = false;
+    private boolean wantsToBeMember = false;
 
 
     /* ---- Constructor ---- */
@@ -39,6 +40,10 @@ public class Person {
         return wantsToBeEmployee;
     }
 
+    public boolean wantsToBeMember() {
+        return wantsToBeMember;
+    }
+
     /* ---- Setters ---- */
     public void setName(String name) {
         this.name = name;
@@ -58,6 +63,10 @@ public class Person {
 
     public void setWantsToBeEmployee(boolean wantsToBeEmployee) {
         this.wantsToBeEmployee = wantsToBeEmployee;
+    }
+
+    public void setWantsToBeMember(boolean wantsToBeMember) {
+        this.wantsToBeMember = wantsToBeMember;
     }
 
     /* ---- Behaviours ---- */
