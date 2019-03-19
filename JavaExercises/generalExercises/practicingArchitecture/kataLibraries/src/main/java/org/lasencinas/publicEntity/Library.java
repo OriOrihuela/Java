@@ -4,6 +4,7 @@ import org.lasencinas.person.Employee;
 import org.lasencinas.person.Member;
 import org.lasencinas.person.Person;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Library extends PublicEntity {
@@ -13,11 +14,19 @@ public class Library extends PublicEntity {
     private TownHall townHall = null;
     private boolean libraryWantsToFire = false;
 
-    private List<Employee> employeeList = null;
-    private List<Member> memberList = null;
+    private List<Employee> employeeList = new ArrayList<>();
+    private List<Member> memberList = new ArrayList<>();
 
 
     /* ---- Constructor ---- */
+    public Library() {
+
+    }
+
+    public Library(int entityCode, String entityName, String address) {
+        super(entityCode, entityName, address);
+    }
+
     public Library(int entityCode, String entityName, String address, Person director, TownHall townHall) {
         super(entityCode, entityName, address);
         this.director = director;
@@ -70,8 +79,9 @@ public class Library extends PublicEntity {
 
 
     /* ---- Behaviours ---- */
-    public void createEmployee(Employee employee) {
-        if (employee.getIdLibrary() == 0 && employee.wantsToBeEmployee() == true) {
+    public void createEmployee(Person person) {
+        if (person.wantsToBeEmployee() == true) {
+            Employee employee = (Employee) person;
             employee.setIdLibrary(this.getEntityCode());
             getEmployeeList().add(employee);
         } else {
@@ -79,17 +89,17 @@ public class Library extends PublicEntity {
         }
     }
 
-    public void libraryWantsToFire(String decision) {
-        if (decision.toLowerCase().equals("yes")) {
-            setLibraryWantsToFire(true);
-        } else {
-            setLibraryWantsToFire(false);
-        }
-    }
-
     public void removeEmployee(Employee employee) {
         if (employee.wantsToBeEmployee() == false | this.isLibraryWantsToFire() == true) {
             getEmployeeList().remove(employee);
         }
+    }
+
+    @Override
+    public String toString() {
+        return "director {" + getDirector()+ "}" +
+                "\n" + "townHall {" + getTownHall() + '}' +
+                "\n" + "employeeList: " + getEmployeeList() +
+                "\n" + "memberList: " + getMemberList() + "\n"+  super.toString();
     }
 }
