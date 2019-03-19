@@ -68,4 +68,11 @@ public class Person {
             System.out.println("Incorrect DNI, please try again.");
         }
     }
+
+    @Override
+    public String toString() {
+        return "name: '" + getName()+ '\'' +
+                ", surname: '" + getSurname() + '\'' +
+                ", dni: '" + getDni() + '\'';
+    }
 }
