@@ -37,8 +37,11 @@ public class TownHall {
 
 
     /* ---- Behaviours ---- */
-    public void createLibrary() {
+    public Library createLibrary(PublicEntity publicEntity) {
         Library library = new Library();
+        publicEntity = library;
+        Library library1 = (Library)publicEntity;
+        return library1;
     }
 
     public void addLibrary(Library library) {
