@@ -8,6 +8,9 @@ public class Member extends Person {
 
 
     /* ---- Constructor ---- */
+    public Member() {
+
+    }
     public Member(String name, String surname, String dni) {
         super(name, surname, dni);
     }
