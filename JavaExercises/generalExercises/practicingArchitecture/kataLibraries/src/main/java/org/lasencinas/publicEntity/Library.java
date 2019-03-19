@@ -6,7 +6,6 @@ import org.lasencinas.person.Person;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 public class Library extends PublicEntity {
 
@@ -80,52 +79,16 @@ public class Library extends PublicEntity {
 
 
     /* ---- Behaviours ---- */
-    public Employee createEmployee(Person person) {
-        if (person.wantsToBeEmployee()) {
-            Employee employee = new Employee();
-            person = employee;
-            Employee employeeToReturn = (Employee)person;
-            employee.setIdLibrary(getEntityCode());
-
-            // Introduce the employee ID
-            employee.setEmployeeID(getEmployeeList().size() + 1);
-            return employeeToReturn;
-        } else {
-            System.out.println("This person cannot be an employee of our Library");
-            return null;
+    public void removeEmployee(Employee employee) {
+        if (!employee.wantsToBeEmployee() | libraryWantsToFire()) {
+            getEmployeeList().remove(employee);
         }
     }
 
-    public void removeEmployee(Person person) {
-        if (!person.wantsToBeEmployee() | libraryWantsToFire()) {
-            getEmployeeList().remove(person);
+    public void removeMember(Member member) {
+        if (!member.wantsToBeMember()) {
+            getMemberList().remove(member);
         }
-    }
-
-    public Member createMember(Person person) {
-        if (person.wantsToBeMember()) {
-            Member member = new Member();
-            person = member;
-            Member memberToReturn = (Member)person;
-            member.setIdLibrary(getEntityCode());
-
-            // Introduce the member ID
-            member.setMemberID(getMemberList().size() + 1);
-            return memberToReturn;
-        } else {
-            System.out.println("This person cannot be a member of our Library");
-            return null;
-        }
-    }
-
-    public Member removeMember(Person person) {
-        if (!person.wantsToBeMember()) {
-            Member member = new Member();
-            person = member;
-            Member memberToReturn = (Member)person;
-            return  memberToReturn;
-        }
-        return null;
     }
 
     @Override
