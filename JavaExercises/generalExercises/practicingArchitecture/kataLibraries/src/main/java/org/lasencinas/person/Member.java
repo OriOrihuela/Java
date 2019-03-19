@@ -14,7 +14,6 @@ public class Member extends Person {
 
 
     /* ---- Getters ---- */
-
     public int getMemberID() {
         return memberID;
     }
@@ -25,7 +24,6 @@ public class Member extends Person {
 
 
     /* ---- Setters ---- */
-
     public void setMemberID(int memberID) {
         this.memberID = memberID;
     }
