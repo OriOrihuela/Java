@@ -5,12 +5,12 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 
-public class ProcesadorTextoTest {
+public class TextProcessorTest {
 
 	@Test
 	public void test_simple() {
 		
-		ProcesadorTexto procesador = new ProcesadorTexto();
+		TextProcessor procesador = new TextProcessor();
 		
 		procesador.nueva("No");
 		procesador.nueva("himporta");
@@ -23,13 +23,13 @@ public class ProcesadorTextoTest {
 	@Test
 	public void test_con_idioma() {
 		
-		ProcesadorTexto procesador = new ProcesadorTexto();
+		TextProcessor procesador = new TextProcessor();
 		
 		procesador.nueva("Tengo");
 		procesador.nueva("hambre");
 		
 		assertEquals("Tengo hambre", procesador.texto());
 		
-		assertTrue(procesador.correcto(Idioma.ES));
+		assertTrue(procesador.correcto(Language.ES));
 	}
 }
