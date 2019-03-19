@@ -3,7 +3,7 @@ package org.lasencinas;
 import java.util.Arrays;
 import java.util.List;
 
-public enum Idioma {
+public enum Language {
 	
 	EN ("I","am","angry"), 
 	ES ("tengo","hambre"), 
@@ -11,7 +11,7 @@ public enum Idioma {
 	
 	List<String> diccionario;
 
-	private Idioma(String ... palabras) {
+	private Language(String ... palabras) {
 		this.diccionario = Arrays.asList(palabras);
 	}
 	
