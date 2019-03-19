@@ -12,6 +12,9 @@ public class Person {
 
 
     /* ---- Constructor ---- */
+    public Person(){
+
+    }
     public Person(String name, String surname, String dni) {
         this.name = name;
         this.surname = surname;
