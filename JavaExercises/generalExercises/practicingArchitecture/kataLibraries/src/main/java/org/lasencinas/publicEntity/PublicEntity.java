@@ -54,10 +54,8 @@ public class PublicEntity {
 
     @Override
     public String toString() {
-        return "PublicEntity { " +
-                "entityCode: " + getEntityCode() +
-                ", entityName: '" + getEntityName() + '\'' +
-                ", address: '" + getAddress() + '\'' + " " +
-                '}';
+        return "entityCode: " + getEntityCode() +
+                "\n" + "entityName: '" + getEntityName() + '\'' +
+                "\n" + "address: '" + getAddress() + '\'';
     }
 }
