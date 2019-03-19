@@ -36,8 +36,5 @@ public class MemberTest {
 
         member3.setBirth("02/08/1993");
         assertEquals("02/08/1993", member3.getBirth());
-
-        member2.setWantsToBeMember(false);
-        assertEquals(false, member2.wantsToBeMember());
     }
 }
