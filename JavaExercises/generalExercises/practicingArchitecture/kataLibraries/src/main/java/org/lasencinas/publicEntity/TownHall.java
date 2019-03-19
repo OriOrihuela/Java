@@ -51,6 +51,6 @@ public class TownHall {
     @Override
     public String toString() {
         return "name: '" + getName() + '\'' +
-                ", libraryList: " + getLibraryList();
+                "\n" + "libraryList: " + getLibraryList();
     }
 }
