@@ -8,6 +8,8 @@ public class Employee extends Person {
 
 
     /* ---- Constructor ---- */
+    public Employee() {}
+
     public Employee(String name, String surname, String dni) {
         super(name, surname, dni);
     }
