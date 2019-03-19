@@ -6,6 +6,7 @@ import org.lasencinas.person.Person;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Library extends PublicEntity {
 
@@ -51,7 +52,7 @@ public class Library extends PublicEntity {
         return memberList;
     }
 
-    public boolean isLibraryWantsToFire() {
+    public boolean libraryWantsToFire() {
         return libraryWantsToFire;
     }
 
@@ -80,9 +81,14 @@ public class Library extends PublicEntity {
 
     /* ---- Behaviours ---- */
     public void createEmployee(Person person) {
-        if (person.wantsToBeEmployee() == true) {
+        if (person.wantsToBeEmployee()) {
             Employee employee = (Employee) person;
             employee.setIdLibrary(this.getEntityCode());
+
+            System.out.println("Introduce the Employee ID");
+            Scanner scanner = new Scanner(System.in);
+            employee.setEmployeeID(scanner.nextInt());
+
             getEmployeeList().add(employee);
         } else {
             System.out.println("This person cannot be an employee of our Library");
@@ -90,8 +96,29 @@ public class Library extends PublicEntity {
     }
 
     public void removeEmployee(Employee employee) {
-        if (employee.wantsToBeEmployee() == false | this.isLibraryWantsToFire() == true) {
+        if (!employee.wantsToBeEmployee() | this.libraryWantsToFire()) {
             getEmployeeList().remove(employee);
+        }
+    }
+
+    public void createMember(Person person) {
+        if (person.wantsToBeEmployee()) {
+            Member member = (Member) person;
+            member.setIdLibrary(this.getEntityCode());
+
+            System.out.println("Introduce the Member ID");
+            Scanner scanner = new Scanner(System.in);
+            member.setMemberID(scanner.nextInt());
+
+            getMemberList().add(member);
+        } else {
+            System.out.println("This person cannot be a member of our Library");
+        }
+    }
+
+    public void removeMember(Member member) {
+        if (!member.wantsToBeEmployee()) {
+            getEmployeeList().remove(member);
         }
     }
 
