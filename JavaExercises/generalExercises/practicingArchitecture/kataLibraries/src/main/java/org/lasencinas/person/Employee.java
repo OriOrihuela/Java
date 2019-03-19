@@ -5,6 +5,7 @@ public class Employee extends Person {
     /* ---- Properties of the class ---- */
     private int employeeID = 0;
     private int idLibrary = 0;
+    private boolean wantsToBeEmployee = true;
 
 
     /* ---- Constructor ---- */
@@ -24,6 +25,9 @@ public class Employee extends Person {
         return idLibrary;
     }
 
+    public boolean wantsToBeEmployee() {
+        return wantsToBeEmployee;
+    }
 
     /* ---- Setters ---- */
     public void setEmployeeID(int employeeID) {
@@ -32,5 +36,9 @@ public class Employee extends Person {
 
     public void setIdLibrary(int idLibrary) {
         this.idLibrary = idLibrary;
+    }
+
+    public void setWantsToBeEmployee(boolean wantsToBeEmployee) {
+        this.wantsToBeEmployee = wantsToBeEmployee;
     }
 }
