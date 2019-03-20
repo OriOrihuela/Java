@@ -101,9 +101,9 @@ public class Library extends PublicEntity {
 
     @Override
     public String toString() {
-        return "director {" + getDirector() + "}" +
-                "\n" + "townHall {" + getTownHall() + '}' +
+        return "director: " + "\n" + getDirector()  +
+                "\n" + "townHall " + getTownHall() +
                 "\n" + "employeeList: " + getEmployeeList() +
-                "\n" + "memberList: " + getMemberList() + "\n" + super.toString();
+                "\n" + "memberList: " + getMemberList() + "\n" + super.toString() + "\n";
     }
 }
