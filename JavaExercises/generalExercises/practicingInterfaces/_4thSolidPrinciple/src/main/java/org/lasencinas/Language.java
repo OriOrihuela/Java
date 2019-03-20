@@ -11,7 +11,7 @@ public enum Language {
 
     List<String> diccionario;
 
-    private Language(String... palabras) {
+    Language(String... palabras) {
         this.diccionario = Arrays.asList(palabras);
     }
 }
