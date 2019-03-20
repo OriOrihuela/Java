@@ -14,9 +14,39 @@ public enum Planeta {
     URANUS  (8.686e+25, 2.5559e7),
     NEPTUNE (1.024e+26, 2.4746e7);
 
-    List<Double> planetas;
+    /* ---- Properties of the class ---- */
+    private Double masa = 0d;
+    private Double radio = 0d;
 
-    Planeta(Double ... planets) {
-        planetas = Arrays.asList(planets);
+
+    /* ---- Constructors ---- */
+    Planeta(Double masa, Double radio) {
+        this.masa = masa;
+        this.radio = radio;
+    }
+
+
+    /* ---- Getters ---- */
+    public Double getMasa() {
+        return masa;
+    }
+
+    public Double getRadio() {
+        return radio;
+    }
+
+
+    /* ---- Setters ---- */
+    public void setMasa(Double masa) {
+        this.masa = masa;
+    }
+
+    public void setRadio(Double radio) {
+        this.radio = radio;
+    }
+
+    /* ---- Behaviours ---- */
+    public Double pesoSuperficie(Double peso) {
+
     }
 }
