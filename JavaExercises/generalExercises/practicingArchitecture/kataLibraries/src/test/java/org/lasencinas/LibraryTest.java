@@ -67,6 +67,7 @@ public class LibraryTest {
 
         library.addEmployee(employee);
         assertEquals(1, library.getEmployeeList().size());
+        assertEquals(library, employee.getLibraryWhereWorks());
 
         employee.setWantsToBeEmployee(false);
         assertFalse(employee.wantsToBeEmployee());
@@ -83,6 +84,7 @@ public class LibraryTest {
 
         library.addMember(member);
         assertEquals(1, library.getMemberList().size());
+        assertEquals(library, member.getAssociatedLibrary());
 
         member.setWantsToBeMember(false);
         assertFalse(member.wantsToBeMember());
