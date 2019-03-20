@@ -1,6 +1,6 @@
 package org.lasencinas.publicEntity;
 
-public class PublicEntity {
+public abstract class PublicEntity {
 
     /* ---- Properties of the class ---- */
     private int entityCode = 0;
