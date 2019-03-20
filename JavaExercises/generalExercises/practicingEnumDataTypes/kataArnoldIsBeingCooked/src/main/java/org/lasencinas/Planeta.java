@@ -1,9 +1,6 @@
 package org.lasencinas;
 
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public enum Planeta {
 
@@ -70,19 +67,23 @@ public enum Planeta {
 
     public static Set<Planeta> getPlanetasTerrestres() {
         Set<Planeta> terrestialPlanets = new HashSet<>();
-        terrestialPlanets.add(EARTH);
-        terrestialPlanets.add(MERCURY);
-        terrestialPlanets.add(MARS);
-        terrestialPlanets.add(VENUS);
+        for (Planeta planeta : Planeta.values()) {
+            if (planeta.name() == EARTH.name() && planeta.name() == MARS.name() && planeta.name() == VENUS.name()
+                    && planeta.name() == MERCURY.name()) {
+                terrestialPlanets.add(planeta);
+            }
+        }
         return terrestialPlanets;
     }
 
     public static Set<Planeta> getGigantesGaseosos() {
         Set<Planeta> gaseousPlanets = new HashSet<>();
-        gaseousPlanets.add(JUPITER);
-        gaseousPlanets.add(SATURN);
-        gaseousPlanets.add(URANUS);
-        gaseousPlanets.add(NEPTUNE);
+        for (Planeta planeta : Planeta.values()) {
+            if (planeta.name() == JUPITER.name() && planeta.name() == SATURN.name() && planeta.name() == URANUS.name()
+                    && planeta.name() == NEPTUNE.name()) {
+                gaseousPlanets.add(planeta);
+            }
+        }
         return gaseousPlanets;
     }
 }
