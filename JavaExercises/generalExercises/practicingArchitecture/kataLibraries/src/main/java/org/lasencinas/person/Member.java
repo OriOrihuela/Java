@@ -1,11 +1,14 @@
 package org.lasencinas.person;
 
+import org.lasencinas.publicEntity.Library;
+
 public class Member extends Person {
 
     /* ---- Properties of the class ---- */
     private int memberID = 0;
     private int idLibrary = 0;
     private boolean wantsToBeMember = true;
+    private Library associatedLibrary = null;
 
 
     /* ---- Constructor ---- */
@@ -30,6 +33,11 @@ public class Member extends Person {
         return wantsToBeMember;
     }
 
+    public Library getAssociatedLibrary() {
+        return associatedLibrary;
+    }
+
+
     /* ---- Setters ---- */
     public void setMemberID(int memberID) {
         this.memberID = memberID;
@@ -41,5 +49,9 @@ public class Member extends Person {
 
     public void setWantsToBeMember(boolean wantsToBeMember) {
         this.wantsToBeMember = wantsToBeMember;
+    }
+
+    public void setAssociatedLibrary(Library associatedLibrary) {
+        this.associatedLibrary = associatedLibrary;
     }
 }
