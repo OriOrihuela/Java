@@ -78,12 +78,10 @@ public enum Planeta {
 
     public static Set<Planeta> getGigantesGaseosos() {
         Set<Planeta> gaseousPlanets = new HashSet<>();
-        for (Planeta planeta : Planeta.values()) {
-            if (planeta.name() == JUPITER.name() && planeta.name() == SATURN.name() && planeta.name() == URANUS.name()
-                    && planeta.name() == NEPTUNE.name()) {
-                gaseousPlanets.add(planeta);
-            }
-        }
+        gaseousPlanets.add(JUPITER);
+        gaseousPlanets.add(URANUS);
+        gaseousPlanets.add(NEPTUNE);
+        gaseousPlanets.add(SATURN);
         return gaseousPlanets;
     }
 }
