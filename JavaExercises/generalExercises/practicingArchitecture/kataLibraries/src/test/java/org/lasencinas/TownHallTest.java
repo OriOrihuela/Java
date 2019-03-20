@@ -2,10 +2,9 @@ package org.lasencinas;
 
 import static org.junit.Assert.*;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
+import org.lasencinas.person.Person;
 import org.lasencinas.publicEntity.Library;
-import org.lasencinas.publicEntity.PublicEntity;
 import org.lasencinas.publicEntity.TownHall;
 
 import java.util.ArrayList;
@@ -14,11 +13,15 @@ import java.util.List;
 public class TownHallTest {
 
     private TownHall townHall = null;
+    private Person major = null;
+    private List<Library> libraryList = null;
 
     @Before
     public void __init__() {
-        townHall = new TownHall("Ajuntament de Palma", null);
-
+        major = new Person("Adolfo", "Domínguez", "54632189K");
+        libraryList = new ArrayList<>();
+        townHall = new TownHall(001, "Ajuntament de Palma", "C/ Matamusinos,7", major,
+                libraryList);
     }
 
     @Test
@@ -28,16 +31,16 @@ public class TownHallTest {
 
     @Test
     public void gettersAndSettersTest() {
-        assertEquals("Ajuntament de Palma", townHall.getName());
-        assertEquals(null, townHall.getLibraryList());
+        assertEquals("Ajuntament de Palma", townHall.getEntityName());
+        assertNotNull(townHall.getLibraryList());
 
-        townHall.setName("Bobobó");
-        assertEquals("Bobobó", townHall.getName());
+        townHall.setEntityName("Bobobó");
+        assertEquals("Bobobó", townHall.getEntityName());
 
         Library library = new Library(001, "Biblioteca Can Sales", "C/ Pere, 12");
-        List<Library> libraryList = new ArrayList<>();
+        List<Library> libraryList1 = new ArrayList<>();
 
-        townHall.setLibraryList(libraryList);
+        townHall.setLibraryList(libraryList1);
         townHall.addLibrary(library);
         assertEquals(1, townHall.getLibraryList().size());
     }
@@ -46,7 +49,6 @@ public class TownHallTest {
     public void toStringTest() {
         Library library = new Library(001, "Biblioteca Can Sales", "C/ Pere, 12");
         Library library2 = new Library(203, "Biblioteca Nacional", "Avenida Real");
-        List<Library> libraryList = new ArrayList<>();
         townHall.setLibraryList(libraryList);
         townHall.addLibrary(library);
         townHall.addLibrary(library2);
