@@ -79,10 +79,18 @@ public class Library extends PublicEntity {
 
 
     /* ---- Behaviours ---- */
+    public void addEmployee(Employee employee) {
+        getEmployeeList().add(employee);
+    }
+
     public void removeEmployee(Employee employee) {
         if (!employee.wantsToBeEmployee() | libraryWantsToFire()) {
             getEmployeeList().remove(employee);
         }
+    }
+
+    public void addMember(Member member) {
+        getMemberList().add(member);
     }
 
     public void removeMember(Member member) {
@@ -93,9 +101,9 @@ public class Library extends PublicEntity {
 
     @Override
     public String toString() {
-        return "director {" + getDirector()+ "}" +
+        return "director {" + getDirector() + "}" +
                 "\n" + "townHall {" + getTownHall() + '}' +
                 "\n" + "employeeList: " + getEmployeeList() +
-                "\n" + "memberList: " + getMemberList() + "\n"+  super.toString();
+                "\n" + "memberList: " + getMemberList() + "\n" + super.toString();
     }
 }
