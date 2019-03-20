@@ -67,8 +67,8 @@ public class Person {
 
     @Override
     public String toString() {
-        return "name: '" + getName()+ '\'' +
-                ", surname: '" + getSurname() + '\'' +
-                ", dni: '" + getDni() + '\'';
+        return "name: '" + getName()+ '\'' + "\n" +
+                "surname: '" + getSurname() + '\'' + "\n" +
+                "dni: '" + getDni() + '\'' + "\n";
     }
 }
