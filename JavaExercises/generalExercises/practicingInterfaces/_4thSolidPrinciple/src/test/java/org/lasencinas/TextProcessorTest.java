@@ -12,12 +12,12 @@ public class TextProcessorTest {
 
         TextProcessor procesador = new TextProcessor();
 
-        procesador.nueva("No");
-        procesador.nueva("himporta");
-        procesador.nueva("la");
-        procesador.nueva("hortografia");
+        procesador.addWord("No");
+        procesador.addWord("himporta");
+        procesador.addWord("la");
+        procesador.addWord("hortografia");
 
-        assertEquals("No himporta la hortografia", procesador.texto());
+        assertEquals("No himporta la hortografia", procesador.joinText());
     }
 
     @Test
@@ -25,11 +25,11 @@ public class TextProcessorTest {
 
         TextProcessor procesador = new TextProcessor();
 
-        procesador.nueva("Tengo");
-        procesador.nueva("hambre");
+        procesador.addWord("Tengo");
+        procesador.addWord("hambre");
 
-        assertEquals("Tengo hambre", procesador.texto());
+        assertEquals("Tengo hambre", procesador.joinText());
 
-        assertTrue(procesador.correcto(Language.ES));
+        assertTrue(procesador.correct(Language.ES));
     }
 }
