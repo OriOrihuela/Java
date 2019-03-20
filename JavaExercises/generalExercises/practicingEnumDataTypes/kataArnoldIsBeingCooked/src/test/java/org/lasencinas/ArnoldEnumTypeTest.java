@@ -76,9 +76,9 @@ public class ArnoldEnumTypeTest {
         }
         assertThat(planetasIncluidos).isEqualTo(4);
 
-        /*for(Planeta planeta : Planeta.getPlanetasTerrestres()){
+        for(Planeta planeta : Planeta.getPlanetasTerrestres()){
             assertThat(planeta.name()).isIn(planetasTerrestres);
-        }*/
+        }
     }
 
     @Test
