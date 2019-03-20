@@ -17,6 +17,7 @@ public class LibraryTest {
 
     private Library library = null;
     private Person director = null;
+    private Person major = null;
     private TownHall townHall = null;
     private List<Library> libraryList = null;
 
@@ -24,7 +25,11 @@ public class LibraryTest {
     public void __init__() {
         director = new Person("Adolfo", "Domínguez", "12345678X");
         libraryList = new ArrayList<>();
-        townHall = new TownHall("Ajuntament de Palma", libraryList);
+
+        major = new Person("Pepe", "Guti", "45698736C");
+        townHall = new TownHall(001, "Ajuntament de Palma", "C/ Real, 12", major,
+                libraryList);
+
         library = new Library(101, "Biblioteca Nacional", "C/ Mossèn Palau, 15", director,
                 townHall);
     }
@@ -38,7 +43,7 @@ public class LibraryTest {
 
     @Test
     public void settersAndGettersTest() {
-        assertEquals("Ajuntament de Palma", library.getTownHall().getName());
+        assertEquals("Ajuntament de Palma", library.getTownHall().getEntityName());
         assertEquals("Adolfo", library.getDirector().getName());
 
         List<Employee> employeeList = new ArrayList<>();
