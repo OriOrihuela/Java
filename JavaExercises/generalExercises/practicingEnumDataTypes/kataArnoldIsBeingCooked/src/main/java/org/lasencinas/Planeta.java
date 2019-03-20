@@ -18,11 +18,17 @@ public enum Planeta {
     private Double masa = 0d;
     private Double radio = 0d;
 
+    List<Double> planets;
+
 
     /* ---- Constructors ---- */
     Planeta(Double masa, Double radio) {
         this.masa = masa;
         this.radio = radio;
+    }
+
+    Planeta(Double ... planets1) {
+        planets = Arrays.asList(planets1);
     }
 
 
@@ -35,6 +41,10 @@ public enum Planeta {
         return radio;
     }
 
+    public List<Double> getPlanets() {
+        return planets;
+    }
+
 
     /* ---- Setters ---- */
     public void setMasa(Double masa) {
@@ -45,8 +55,14 @@ public enum Planeta {
         this.radio = radio;
     }
 
+    public void setPlanets(List<Double> planets) {
+        this.planets = planets;
+    }
+
+
     /* ---- Behaviours ---- */
     public Double pesoSuperficie(Double peso) {
-
+        // Yet to implement :D
+        return null;
     }
 }
