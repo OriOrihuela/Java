@@ -70,16 +70,19 @@ public enum Planeta {
 
     public static Set<Planeta> getPlanetasTerrestres() {
         Set<Planeta> terrestialPlanets = new HashSet<>();
-
         terrestialPlanets.add(EARTH);
         terrestialPlanets.add(MERCURY);
         terrestialPlanets.add(MARS);
         terrestialPlanets.add(VENUS);
-
         return terrestialPlanets;
     }
 
-    public static Planeta getGigantesGaseosos() {
-        return null;
+    public static Set<Planeta> getGigantesGaseosos() {
+        Set<Planeta> gaseousPlanets = new HashSet<>();
+        gaseousPlanets.add(JUPITER);
+        gaseousPlanets.add(SATURN);
+        gaseousPlanets.add(URANUS);
+        gaseousPlanets.add(NEPTUNE);
+        return gaseousPlanets;
     }
 }
