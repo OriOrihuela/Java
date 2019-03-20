@@ -60,7 +60,7 @@ public class LibraryTest {
         List<Employee> employeeList = new ArrayList<>();
         library.setEmployeeList(employeeList);
 
-        library.getEmployeeList().add(employee);
+        library.addEmployee(employee);
         assertEquals(1, library.getEmployeeList().size());
 
         employee.setWantsToBeEmployee(false);
@@ -76,7 +76,7 @@ public class LibraryTest {
         List<Member> memberList = new ArrayList<>();
         library.setMemberList(memberList);
 
-        library.getMemberList().add(member);
+        library.addMember(member);
         assertEquals(1, library.getMemberList().size());
 
         member.setWantsToBeMember(false);
