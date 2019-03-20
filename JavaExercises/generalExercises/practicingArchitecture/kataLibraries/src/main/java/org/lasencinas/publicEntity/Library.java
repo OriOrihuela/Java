@@ -80,6 +80,7 @@ public class Library extends PublicEntity {
 
     /* ---- Behaviours ---- */
     public void addEmployee(Employee employee) {
+        employee.setLibraryWhereWorks(this);
         getEmployeeList().add(employee);
     }
 
@@ -90,6 +91,7 @@ public class Library extends PublicEntity {
     }
 
     public void addMember(Member member) {
+        member.setAssociatedLibrary(this);
         getMemberList().add(member);
     }
 
