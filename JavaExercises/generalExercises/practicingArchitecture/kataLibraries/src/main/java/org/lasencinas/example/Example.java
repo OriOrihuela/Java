@@ -48,9 +48,11 @@ public abstract class Example {
 
 
     /* ---- Behaviours ---- */
+
     @Override
     public String toString() {
-        return "townHallWhereBelongs: '" + getTownHallWhereBelongs() + "'" +
-                "\n";
+        return "name: '" + getName() + '\'' + '\n' +
+                "ISBN: '" + getISBN() + '\'' + '\n' +
+                "townHallWhereBelongs: " + getTownHallWhereBelongs() + '\'' + '\n';
     }
 }
