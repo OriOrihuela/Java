@@ -1,5 +1,6 @@
 package org.lasencinas.publicEntity;
 
+import org.lasencinas.example.Copy;
 import org.lasencinas.person.Employee;
 import org.lasencinas.person.Member;
 import org.lasencinas.person.Person;
@@ -14,8 +15,9 @@ public class Library extends PublicEntity {
     private TownHall townHall = null;
     private boolean libraryWantsToFire = false;
 
-    private List<Employee> employeeList = new ArrayList<>();
-    private List<Member> memberList = new ArrayList<>();
+    private List<Employee> employeeList = null;
+    private List<Member> memberList = null;
+    private List<Copy> copyList = null;
 
 
     /* ---- Constructor ---- */
@@ -55,6 +57,10 @@ public class Library extends PublicEntity {
         return libraryWantsToFire;
     }
 
+    public List<Copy> getCopyList() {
+        return copyList;
+    }
+
 
     /* ---- Setters ---- */
     public void setDirector(Person director) {
@@ -75,6 +81,10 @@ public class Library extends PublicEntity {
 
     public void setLibraryWantsToFire(boolean libraryWantsToFire) {
         this.libraryWantsToFire = libraryWantsToFire;
+    }
+
+    public void setCopyList(List<Copy> copyList) {
+        this.copyList = copyList;
     }
 
 
