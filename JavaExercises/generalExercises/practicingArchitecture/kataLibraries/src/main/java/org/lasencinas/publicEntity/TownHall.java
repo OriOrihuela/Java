@@ -1,5 +1,6 @@
 package org.lasencinas.publicEntity;
 
+import org.lasencinas.example.Example;
 import org.lasencinas.person.Person;
 
 import java.util.ArrayList;
@@ -9,6 +10,7 @@ public class TownHall extends PublicEntity {
 
     /* ---- Properties of the class ---- */
     private Person major = null;
+    private List<Example> exampleList = null;
     private List<Library> libraryList = new ArrayList<>();
 
 
@@ -36,6 +38,11 @@ public class TownHall extends PublicEntity {
         return major;
     }
 
+    public List<Example> getExampleList() {
+        return exampleList;
+    }
+
+
     /* ---- Setters ---- */
     public void setLibraryList(List<Library> libraryList) {
         this.libraryList = libraryList;
@@ -44,6 +51,11 @@ public class TownHall extends PublicEntity {
     public void setMajor(Person major) {
         this.major = major;
     }
+
+    public void setExampleList(List<Example> exampleList) {
+        this.exampleList = exampleList;
+    }
+
 
     /* ---- Behaviours ---- */
     public Library createLibrary(PublicEntity publicEntity) {
