@@ -1,5 +1,6 @@
 package org.lasencinas.example;
 
+import org.lasencinas.example.copy.BookCopy;
 import org.lasencinas.publicEntity.TownHall;
 
 import java.util.List;
