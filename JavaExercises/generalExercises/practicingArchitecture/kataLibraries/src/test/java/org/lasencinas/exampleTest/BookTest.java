@@ -32,8 +32,6 @@ public class BookTest {
 
         List<BookCopy> bookCopyList = new ArrayList<>();
         Book book2 = new Book("Las Dos Torres", 789, null, null);
-        Book book3 = new Book("Las Dos Torres", 789, null, null);
-        Book book4 = new Book("Las Dos Torres", 789, null, null);
 
         BookCopy bookCopy = new BookCopy(book2);
         BookCopy bookCopy2 = new BookCopy(book2);
