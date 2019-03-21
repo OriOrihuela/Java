@@ -1,5 +1,6 @@
 package org.lasencinas;
 
+import java.nio.DoubleBuffer;
 import java.util.*;
 
 public enum Planeta {
@@ -13,12 +14,12 @@ public enum Planeta {
     URANUS(8.686e+25, 2.5559e7),
     NEPTUNE(1.024e+26, 2.4746e7);
 
+
     /* ---- Properties of the class ---- */
     private Double masa = 0d;
     private Double radio = 0d;
-    private final Double G = 6.67300E-11; // Gravitational Constant
-
-    List<Double> planets;
+    private final Double constanteGravitacional = 6.67300E-11;
+    private List<Double> planets = null;
 
 
     /* ---- Constructors ---- */
@@ -28,7 +29,7 @@ public enum Planeta {
     }
 
     Planeta(Double... planets1) {
-        planets = Arrays.asList(planets1);
+        this.planets = Arrays.asList(planets1);
     }
 
 
@@ -43,6 +44,10 @@ public enum Planeta {
 
     public List<Double> getPlanets() {
         return planets;
+    }
+
+    public Double getConstanteGravitacional() {
+        return constanteGravitacional;
     }
 
 
@@ -61,8 +66,20 @@ public enum Planeta {
 
 
     /* ---- Behaviours ---- */
+    public Double gravedadEnLaSuperficie() {
+        return getConstanteGravitacional() * getMasa() / Math.pow(getRadio(), 2);
+    }
+
+    public Double gravedadEnLaSuperficie(Planeta planeta) {
+        return getConstanteGravitacional() * planeta.getMasa() / Math.pow(planeta.getRadio(), 2);
+    }
+
+    public Double tuMasa(Double peso) {
+        return peso / gravedadEnLaSuperficie(EARTH);
+    }
+
     public Double pesoSuperficie(Double peso) {
-        return peso * 9.8;
+        return tuMasa(peso) * gravedadEnLaSuperficie();
     }
 
     public static Set<Planeta> getPlanetasTerrestres() {
