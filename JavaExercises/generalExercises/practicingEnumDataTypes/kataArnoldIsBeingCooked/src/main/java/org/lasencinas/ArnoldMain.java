@@ -11,12 +11,12 @@ public class ArnoldMain {
         }
 
         System.out.println("\nYour weight only on the terrestrial planets: ");
-        for(Planeta planeta: Planeta.getPlanetasTerrestres()){
+        for (Planeta planeta : Planeta.getPlanetasTerrestres()) {
             System.out.printf("Your weight on %s is %f \n", planeta.name(), planeta.pesoSuperficie(peso));
         }
 
         System.out.println("\nYour weight only on the gas giant planets: ");
-        for(Planeta planeta: Planeta.getGigantesGaseosos()){
+        for (Planeta planeta : Planeta.getGigantesGaseosos()) {
             System.out.printf("Your weight on %s is %f \n", planeta.name(), planeta.pesoSuperficie(peso));
         }
     }
