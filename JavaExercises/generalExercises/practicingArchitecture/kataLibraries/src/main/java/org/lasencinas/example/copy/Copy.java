@@ -15,6 +15,10 @@ public class Copy {
 
     }
 
+    public Copy(Library libraryWhereBelongs) {
+        this.libraryWhereBelongs = libraryWhereBelongs;
+    }
+
     public Copy(Magazine magazine, Library libraryWhereBelongs) {
         this.magazine = magazine;
         this.libraryWhereBelongs = libraryWhereBelongs;
