@@ -1,5 +1,6 @@
-package org.lasencinas.example;
+package org.lasencinas.example.copy;
 
+import org.lasencinas.example.Magazine;
 import org.lasencinas.publicEntity.Library;
 
 public class Copy {
