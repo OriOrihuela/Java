@@ -11,7 +11,8 @@ public class Book extends Example {
 
 
     /* ---- Constructor ---- */
-    public Book(){}
+    public Book() {
+    }
 
     public Book(List<BookCopy> bookCopyList) {
         this.bookCopyList = bookCopyList;
