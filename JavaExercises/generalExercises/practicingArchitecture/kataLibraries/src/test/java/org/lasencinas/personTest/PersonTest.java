@@ -1,4 +1,4 @@
-package org.lasencinas;
+package org.lasencinas.personTest;
 
 import static org.junit.Assert.*;
 

@@ -1,4 +1,4 @@
-package org.lasencinas;
+package org.lasencinas.publicEntityTest;
 
 import static org.junit.Assert.*;
 import org.junit.Before;

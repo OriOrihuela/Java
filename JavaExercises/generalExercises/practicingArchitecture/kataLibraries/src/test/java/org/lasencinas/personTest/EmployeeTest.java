@@ -1,4 +1,4 @@
-package org.lasencinas;
+package org.lasencinas.personTest;
 
 import org.junit.Before;
 import org.junit.Test;

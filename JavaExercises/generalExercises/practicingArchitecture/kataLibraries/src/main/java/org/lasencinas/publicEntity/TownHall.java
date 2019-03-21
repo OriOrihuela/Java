@@ -16,6 +16,10 @@ public class TownHall extends PublicEntity {
     public TownHall() {
     }
 
+    public TownHall(int entityCode, String entityName, String address) {
+        super(entityCode, entityName, address);
+    }
+
     public TownHall(int entityCode, String entityName, String address, Person major, List<Library> libraryList) {
         super(entityCode, entityName, address);
         this.major = major;
