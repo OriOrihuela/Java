@@ -41,7 +41,7 @@ public class Book extends Example {
 
     @Override
     public String toString() {
-        return "bookCopyList: '" + bookCopyList + "'" + "\n" +
+        return "bookCopyList: " + getBookCopyList() + "\n" +
                 super.toString() + "\n";
     }
 }
