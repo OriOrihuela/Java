@@ -7,7 +7,7 @@ public class BookCopy extends Copy {
 
 
     /* ---- Constructor ---- */
-    public BookCopy(){
+    public BookCopy() {
 
     }
 
