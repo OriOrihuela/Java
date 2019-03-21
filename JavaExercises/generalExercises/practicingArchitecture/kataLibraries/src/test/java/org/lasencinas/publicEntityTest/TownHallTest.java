@@ -5,6 +5,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.lasencinas.person.Person;
 import org.lasencinas.publicEntity.Library;
+import org.lasencinas.publicEntity.PublicEntity;
 import org.lasencinas.publicEntity.TownHall;
 
 import java.util.ArrayList;
@@ -53,5 +54,12 @@ public class TownHallTest {
         townHall.addLibrary(library);
         townHall.addLibrary(library2);
         System.out.println(townHall.toString());
+    }
+
+    @Test
+    public void createAndAddLibraryTest() {
+        Library library = townHall.createLibrary();
+        townHall.addLibrary(library);
+        assertNotNull(townHall.getLibraryList());
     }
 }
