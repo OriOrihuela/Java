@@ -1,4 +1,6 @@
-package org.lasencinas.example;
+package org.lasencinas.example.copy;
+
+import org.lasencinas.example.Book;
 
 public class BookCopy extends Copy {
 
