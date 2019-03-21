@@ -15,14 +15,14 @@ public enum Planeta {
 
 
     /* ---- Properties of the class ---- */
-    private Double masa = 0d;
-    private Double radio = 0d;
-    private final Double constanteGravitacional = 6.67300E-11;
+    private double masa = 0d;
+    private double radio = 0d;
+    private final double constanteGravitacional = 6.67300E-11;
     private List<Double> planets = null;
 
 
     /* ---- Constructors ---- */
-    Planeta(Double masa, Double radio) {
+    Planeta(double masa, double radio) {
         this.masa = masa;
         this.radio = radio;
     }
@@ -33,11 +33,11 @@ public enum Planeta {
 
 
     /* ---- Getters ---- */
-    public Double getMasa() {
+    public double getMasa() {
         return masa;
     }
 
-    public Double getRadio() {
+    public double getRadio() {
         return radio;
     }
 
@@ -45,17 +45,17 @@ public enum Planeta {
         return planets;
     }
 
-    public Double getConstanteGravitacional() {
+    public double getConstanteGravitacional() {
         return constanteGravitacional;
     }
 
 
     /* ---- Setters ---- */
-    public void setMasa(Double masa) {
+    public void setMasa(double masa) {
         this.masa = masa;
     }
 
-    public void setRadio(Double radio) {
+    public void setRadio(double radio) {
         this.radio = radio;
     }
 
@@ -65,37 +65,37 @@ public enum Planeta {
 
 
     /* ---- Behaviours ---- */
-    public Double gravedadEnLaSuperficie() {
-        Double constanteGravitacional = getConstanteGravitacional();
-        Double propiedadesDelPlaneta = getMasa() / Math.pow(getRadio(), 2);
-        Double gravedadEnLaSuperficie = constanteGravitacional * propiedadesDelPlaneta;
+    public double gravedadEnLaSuperficie() {
+        double constanteGravitacional = getConstanteGravitacional();
+        double propiedadesDelPlaneta = getMasa() / Math.pow(getRadio(), 2);
+        double gravedadEnLaSuperficie = constanteGravitacional * propiedadesDelPlaneta;
         return gravedadEnLaSuperficie;
     }
 
-    public Double gravedadEnLaSuperficie(Planeta planeta) {
-        Double constanteGravitacional = getConstanteGravitacional();
-        Double propiedadesDelPlaneta = planeta.getMasa() / Math.pow(planeta.getRadio(), 2);
-        Double gravedadEnLaSuperficie = constanteGravitacional * propiedadesDelPlaneta;
+    public double gravedadEnLaSuperficie(Planeta planeta) {
+        double constanteGravitacional = getConstanteGravitacional();
+        double propiedadesDelPlaneta = planeta.getMasa() / Math.pow(planeta.getRadio(), 2);
+        double gravedadEnLaSuperficie = constanteGravitacional * propiedadesDelPlaneta;
         return gravedadEnLaSuperficie;
     }
 
-    public Double tuMasa(Double peso) {
-        Double gravedadDelPlanetaTierra = gravedadEnLaSuperficie(EARTH);
-        Double tuMasa = peso / gravedadDelPlanetaTierra;
+    public double tuMasa(double peso) {
+        double gravedadDelPlanetaTierra = gravedadEnLaSuperficie(EARTH);
+        double tuMasa = peso / gravedadDelPlanetaTierra;
         return tuMasa;
     }
 
-    public Double pesoSuperficie(Double peso) {
-        Double gravedadDelPlaneta = gravedadEnLaSuperficie();
-        Double tuPeso = tuMasa(peso) * gravedadDelPlaneta;
+    public double pesoSuperficie(double peso) {
+        double gravedadDelPlaneta = gravedadEnLaSuperficie();
+        double tuPeso = tuMasa(peso) * gravedadDelPlaneta;
         return tuPeso;
     }
 
     public static Set<Planeta> getPlanetasTerrestres() {
         Set<Planeta> terrestialPlanets = new HashSet<>();
         for (Planeta planeta : Planeta.values()) {
-            if (planeta.name() == EARTH.name() && planeta.name() == MARS.name() && planeta.name() == VENUS.name()
-                    && planeta.name() == MERCURY.name()) {
+            if (planeta.name().equals(EARTH.name()) || planeta.name().equals(MARS.name()) ||
+                    planeta.name().equals(VENUS.name()) || planeta.name().equals(MERCURY.name())) {
                 terrestialPlanets.add(planeta);
             }
         }
