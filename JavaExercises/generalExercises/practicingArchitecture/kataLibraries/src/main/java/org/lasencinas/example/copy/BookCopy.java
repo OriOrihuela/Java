@@ -1,6 +1,7 @@
 package org.lasencinas.example.copy;
 
 import org.lasencinas.example.Book;
+import org.lasencinas.publicEntity.Library;
 
 public class BookCopy extends Copy {
 
@@ -17,6 +18,10 @@ public class BookCopy extends Copy {
         this.book = book;
     }
 
+    public BookCopy(Library libraryWhereBelongs, Book book) {
+        super(libraryWhereBelongs);
+        this.book = book;
+    }
 
     /* ---- Getters ---- */
     public Book getBook() {
@@ -33,7 +38,7 @@ public class BookCopy extends Copy {
     /* ---- Behaviours ---- */
     @Override
     public String toString() {
-        return "book: '" + getBook() + "'" + "\n" +
-                super.toString() + "\n";
+        return "book: '" +
+                getBook() + "'" + "\n";
     }
 }
