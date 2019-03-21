@@ -53,6 +53,6 @@ public abstract class Example {
     public String toString() {
         return "name: '" + getName() + '\'' + '\n' +
                 "ISBN: '" + getISBN() + '\'' + '\n' +
-                "townHallWhereBelongs: " + getTownHallWhereBelongs() + '\'' + '\n';
+                "townHallWhereBelongs: '" + getTownHallWhereBelongs() + '\'' + '\n';
     }
 }
