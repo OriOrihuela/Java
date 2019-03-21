@@ -66,19 +66,29 @@ public enum Planeta {
 
     /* ---- Behaviours ---- */
     public Double gravedadEnLaSuperficie() {
-        return getConstanteGravitacional() * getMasa() / Math.pow(getRadio(), 2);
+        Double constanteGravitacional = getConstanteGravitacional();
+        Double propiedadesDelPlaneta = getMasa() / Math.pow(getRadio(), 2);
+        Double gravedadEnLaSuperficie = constanteGravitacional * propiedadesDelPlaneta;
+        return gravedadEnLaSuperficie;
     }
 
     public Double gravedadEnLaSuperficie(Planeta planeta) {
-        return getConstanteGravitacional() * planeta.getMasa() / Math.pow(planeta.getRadio(), 2);
+        Double constanteGravitacional = getConstanteGravitacional();
+        Double propiedadesDelPlaneta = planeta.getMasa() / Math.pow(planeta.getRadio(), 2);
+        Double gravedadEnLaSuperficie = constanteGravitacional * propiedadesDelPlaneta;
+        return gravedadEnLaSuperficie;
     }
 
     public Double tuMasa(Double peso) {
-        return peso / gravedadEnLaSuperficie(EARTH);
+        Double gravedadDelPlanetaTierra = gravedadEnLaSuperficie(EARTH);
+        Double tuMasa = peso / gravedadDelPlanetaTierra;
+        return tuMasa;
     }
 
     public Double pesoSuperficie(Double peso) {
-        return tuMasa(peso) * gravedadEnLaSuperficie();
+        Double gravedadDelPlaneta = gravedadEnLaSuperficie();
+        Double tuPeso = tuMasa(peso) * gravedadDelPlaneta;
+        return tuPeso;
     }
 
     public static Set<Planeta> getPlanetasTerrestres() {
