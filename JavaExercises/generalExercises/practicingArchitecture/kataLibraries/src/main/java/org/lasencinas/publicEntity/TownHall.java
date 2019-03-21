@@ -58,11 +58,9 @@ public class TownHall extends PublicEntity {
 
 
     /* ---- Behaviours ---- */
-    public Library createLibrary(PublicEntity publicEntity) {
+    public Library createLibrary() {
         Library library = new Library();
-        publicEntity = library;
-        Library library1 = (Library) publicEntity;
-        return library1;
+        return library;
     }
 
     public void addLibrary(Library library) {
