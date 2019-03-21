@@ -1,21 +1,13 @@
-En este ejercicio teneis un "complicado" proyecto que mejorar segun el principio del
-Dependency Inversion
+# 5th SOLID Principle
+### In this exercise you have a *"complicated"* project to improve according to the principle of `Dependency Inversion`.
 
-Este proyecto gestiona un conjunto de tiendas, cada una con su inventario. La parte critica 
-de la aplicacion es un algoritmo que hemos inventado que determina cuando es necesario reponer
-un producto en una tienda.
+This project manages a set of stores, each with its inventory. The critical part of the application is an algorithm that we have invented that determines when it is necessary to replace a product in a store.
 
-En src hay dos packages org.formacion.di.negocio, con las reglas de negocio que nos van a
-hacer millonarios, y org.formacion.di.bbdd, con el codigo tecnico que necesitamos para acceder
-a las base de datos.
+1. In `src` there are two packages, `org.lasencinas.negocio`, with the business rules that are going to make millionaires, and `org.lasencinas.bbdd`, with the technical code we need to access to the database.
 
-Actualmente, hay una dependencia del package negocio, al package bbdd, ya que el ControladorEstoc
-necesita saber cual es el estoc actual en una tienda, y esto lo hace InventarioBBDD.
+2. Currently, there is a dependency of the business package, to the bbdd package, since the `StockController`
+needs to know what is the current stock in a store, and this is done by `InventoryBBDD`.
 
-Vuestro trabajo: 
-
-Hacer que el package negocio no tenga ninguna dependencia al package bbdd. 
-Cread una interface en negocio que capture lo que se necesita de la logica de inventario y
-haced que controladorEstoc se exprese con esta interface.
-
-Hecho este cambio, el test debe funcionar sin modificar nada !
+**Your work:**
+- Make the business package have **no dependency** on the bbdd package. Create an interface in business that captures what is needed from the inventory logic and make `StockController` express itself with this interface.
+Done this change, the test must work without changing anything!
