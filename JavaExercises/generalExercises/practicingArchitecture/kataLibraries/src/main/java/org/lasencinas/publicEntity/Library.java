@@ -1,6 +1,6 @@
 package org.lasencinas.publicEntity;
 
-import org.lasencinas.example.Copy;
+import org.lasencinas.example.copy.Copy;
 import org.lasencinas.person.Employee;
 import org.lasencinas.person.Member;
 import org.lasencinas.person.Person;
