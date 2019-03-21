@@ -71,8 +71,9 @@ public class TownHall extends PublicEntity {
 
     @Override
     public String toString() {
-        return "major: " + "\n" + getMajor() + "\n"+
-                "libraryList: " + getLibraryList() + "\n"
-               + super.toString();
+        return "major: '" + getMajor() + '\'' + '\n' +
+                "exampleList: '" + getExampleList() + '\'' + '\n' +
+                "libraryList: " + getLibraryList() + '\n' +
+                super.toString();
     }
 }
