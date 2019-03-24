@@ -9,7 +9,7 @@ public enum SmartSeverity {
     // Declare an instance variable
     private int projectedTurnaroundDays;
 
-    // Declare a private constructor
+    // Declare a private constructor. The private modifier acces is redundant.
     private SmartSeverity(int projectedTurnaroundDays) {
         this.projectedTurnaroundDays = projectedTurnaroundDays;
     }
