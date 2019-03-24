@@ -67,27 +67,39 @@ public enum Planeta {
     /* ---- Behaviours ---- */
     public double gravedadEnLaSuperficie() {
         double constanteGravitacional = getConstanteGravitacional();
-        double propiedadesDelPlaneta = getMasa() / Math.pow(getRadio(), 2);
-        double gravedadEnLaSuperficie = constanteGravitacional * propiedadesDelPlaneta;
+        double masaDelPlaneta = getMasa();
+        double radioDelPlaneta = Math.pow(getRadio(), 2);
+
+        // The formula to calculate the gravity on the surface of a planet.
+        double gravedadEnLaSuperficie = constanteGravitacional * masaDelPlaneta / radioDelPlaneta;
         return gravedadEnLaSuperficie;
     }
 
     public double gravedadEnLaSuperficie(Planeta planeta) {
         double constanteGravitacional = getConstanteGravitacional();
-        double propiedadesDelPlaneta = planeta.getMasa() / Math.pow(planeta.getRadio(), 2);
-        double gravedadEnLaSuperficie = constanteGravitacional * propiedadesDelPlaneta;
+        double masaDelPlaneta = planeta.getMasa();
+        double radioDelPlaneta = Math.pow(planeta.getRadio(), 2);
+
+        // The formula to calculate the gravity on the surface of a desired planet as a parameter.
+        double gravedadEnLaSuperficie = constanteGravitacional * masaDelPlaneta / radioDelPlaneta;
         return gravedadEnLaSuperficie;
     }
 
-    public double tuMasa(double peso) {
+    public double calcularMasa(double peso) {
         double gravedadDelPlanetaTierra = gravedadEnLaSuperficie(EARTH);
-        double tuMasa = peso / gravedadDelPlanetaTierra;
+        double tuPesoEnLaTierra = peso;
+
+        // The formula to calculate your mass on Earth.
+        double tuMasa = tuPesoEnLaTierra / gravedadDelPlanetaTierra;
         return tuMasa;
     }
 
     public double pesoSuperficie(double peso) {
         double gravedadDelPlaneta = gravedadEnLaSuperficie();
-        double tuPeso = tuMasa(peso) * gravedadDelPlaneta;
+        double tuMasa = calcularMasa(peso);
+
+        // The formula to calculate your weight wherever the planet you are.
+        double tuPeso = tuMasa * gravedadDelPlaneta;
         return tuPeso;
     }
 
