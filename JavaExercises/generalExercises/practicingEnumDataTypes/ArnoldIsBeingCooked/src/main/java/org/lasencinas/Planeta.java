@@ -103,23 +103,26 @@ public enum Planeta {
         return tuPeso;
     }
 
-    public static Set<Planeta> getPlanetasTerrestres() {
-        Set<Planeta> terrestialPlanets = new HashSet<>();
+    public static EnumSet<Planeta> getPlanetasTerrestres() {
+        /* Set<Planeta> terrestialPlanets = new HashSet<>();
         for (Planeta planeta : Planeta.values()) {
             if (planeta.name().equals(EARTH.name()) || planeta.name().equals(MARS.name()) ||
                     planeta.name().equals(VENUS.name()) || planeta.name().equals(MERCURY.name())) {
                 terrestialPlanets.add(planeta);
-            }
-        }
+            }*/
+
+        EnumSet<Planeta> terrestialPlanets = EnumSet.range(MERCURY, MARS);
         return terrestialPlanets;
     }
 
     public static Set<Planeta> getGigantesGaseosos() {
-        Set<Planeta> gaseousPlanets = new HashSet<>();
+        /*Set<Planeta> gaseousPlanets = new HashSet<>();
         gaseousPlanets.add(JUPITER);
         gaseousPlanets.add(URANUS);
         gaseousPlanets.add(NEPTUNE);
-        gaseousPlanets.add(SATURN);
+        gaseousPlanets.add(SATURN);*/
+
+        EnumSet<Planeta> gaseousPlanets = EnumSet.complementOf(getPlanetasTerrestres());
         return gaseousPlanets;
     }
 }
