@@ -6,7 +6,6 @@ public class Member extends Person {
 
     /* ---- Properties of the class ---- */
     private int memberID = 0;
-    private int idLibrary = 0;
     private boolean wantsToBeMember = true;
     private Library associatedLibrary = null;
 
@@ -25,10 +24,6 @@ public class Member extends Person {
         return memberID;
     }
 
-    public int getIdLibrary() {
-        return idLibrary;
-    }
-
     public boolean wantsToBeMember() {
         return wantsToBeMember;
     }
@@ -41,10 +36,6 @@ public class Member extends Person {
     /* ---- Setters ---- */
     public void setMemberID(int memberID) {
         this.memberID = memberID;
-    }
-
-    public void setIdLibrary(int idLibrary) {
-        this.idLibrary = idLibrary;
     }
 
     public void setWantsToBeMember(boolean wantsToBeMember) {
