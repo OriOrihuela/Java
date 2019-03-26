@@ -46,7 +46,7 @@ public class BookTest {
         assertEquals(townHall, book.getTownHallWhereBelongs());
         assertEquals(3, book.getBookCopyList().size());
 
-        System.out.println(book.toString()); // Yet to fix why the toString() method does not work properly :/
+        System.out.println(book2.toString());
     }
 
     @Test
