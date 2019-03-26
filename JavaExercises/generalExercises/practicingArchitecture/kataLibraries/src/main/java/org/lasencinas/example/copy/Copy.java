@@ -8,6 +8,7 @@ public class Copy {
     /* ---- Properties of the class ---- */
     private Magazine magazine = null;
     private Library libraryWhereBelongs = null;
+    private String date = null;
 
 
     /* ---- Constructor ---- */
@@ -34,6 +35,10 @@ public class Copy {
         return libraryWhereBelongs;
     }
 
+    public String getDate() {
+        return date;
+    }
+
 
     /* ---- Setters ---- */
     public void setMagazine(Magazine magazine) {
@@ -44,9 +49,12 @@ public class Copy {
         this.libraryWhereBelongs = libraryWhereBelongs;
     }
 
+    public void setDate(String date) {
+        this.date = date;
+    }
+
 
     /* ---- Behaviours ---- */
-
     @Override
     public String toString() {
         return "magazine: '" + getMagazine() + "'" + "\n" +
