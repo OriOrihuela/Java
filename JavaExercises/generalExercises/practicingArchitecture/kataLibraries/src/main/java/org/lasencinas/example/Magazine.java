@@ -9,9 +9,12 @@ public class Magazine extends Example {
 
     /* ---- Properties of the class ---- */
     private List<Copy> copyList = null;
+    private String year = null;
+    private String month = null;
+    private int idNumber = 0;
 
 
-    /* ---- Cosntructor ---- */
+    /* ---- Constructor ---- */
     public Magazine() {
 
     }
@@ -31,15 +34,38 @@ public class Magazine extends Example {
         return copyList;
     }
 
+    public String getYear() {
+        return year;
+    }
+
+    public String getMonth() {
+        return month;
+    }
+
+    public int getIdNumber() {
+        return idNumber;
+    }
+
 
     /* ---- Setters ---- */
     public void setCopyList(List<Copy> copyList) {
         this.copyList = copyList;
     }
 
+    public void setYear(String year) {
+        this.year = year;
+    }
+
+    public void setMonth(String month) {
+        this.month = month;
+    }
+
+    public void setIdNumber(int idNumber) {
+        this.idNumber = idNumber;
+    }
+
 
     /* ---- Behaviours ---- */
-
     @Override
     public String toString() {
         return "copyList: '" + getCopyList() + "'" + "\n" +
