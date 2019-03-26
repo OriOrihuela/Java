@@ -67,21 +67,11 @@ public enum Planeta {
         return gravedadEnLaSuperficie;
     }
 
-    public double calcularMasa(double peso) {
-        double gravedadDelPlanetaTierra = EARTH.gravedadEnLaSuperficie();
-        double tuPesoEnLaTierra = peso;
-
-        // The formula to calculate your mass on Earth.
-        double tuMasa = tuPesoEnLaTierra / gravedadDelPlanetaTierra;
-        return tuMasa;
-    }
-
     public double pesoSuperficie(double peso) {
         double gravedadDelPlaneta = gravedadEnLaSuperficie();
-        double tuMasa = calcularMasa(peso);
 
         // The formula to calculate your weight wherever the planet you are.
-        double tuPeso = tuMasa * gravedadDelPlaneta;
+        double tuPeso = peso  * gravedadDelPlaneta / EARTH.gravedadEnLaSuperficie();
         return tuPeso;
     }
 
