@@ -7,6 +7,7 @@ public class BookCopy extends Copy {
 
     /* ---- Properties of the class ---- */
     private Book book = null;
+    private String edition = null;
 
 
     /* ---- Constructor ---- */
@@ -28,10 +29,18 @@ public class BookCopy extends Copy {
         return book;
     }
 
+    public String getEdition() {
+        return edition;
+    }
+
 
     /* ---- Setters ----*/
     public void setBook(Book book) {
         this.book = book;
+    }
+
+    public void setEdition(String edition) {
+        this.edition = edition;
     }
 
 
