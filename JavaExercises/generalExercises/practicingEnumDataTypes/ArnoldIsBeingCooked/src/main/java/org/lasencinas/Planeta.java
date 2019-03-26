@@ -17,7 +17,7 @@ public enum Planeta {
     /* ---- Properties of the class ---- */
     private double masa = 0d;
     private double radio = 0d;
-    private final double constanteGravitacional = 6.67300E-11;
+    private final double CONSTANTEGRAVITACIONAL = 6.67300E-11;
     private List<Double> planets = null;
 
 
@@ -45,20 +45,12 @@ public enum Planeta {
         return planets;
     }
 
-    public double getConstanteGravitacional() {
-        return constanteGravitacional;
+    public double getCONSTANTEGRAVITACIONAL() {
+        return CONSTANTEGRAVITACIONAL;
     }
 
 
     /* ---- Setters ---- */
-    public void setMasa(double masa) {
-        this.masa = masa;
-    }
-
-    public void setRadio(double radio) {
-        this.radio = radio;
-    }
-
     public void setPlanets(List<Double> planets) {
         this.planets = planets;
     }
@@ -66,7 +58,7 @@ public enum Planeta {
 
     /* ---- Behaviours ---- */
     public double gravedadEnLaSuperficie() {
-        double constanteGravitacional = getConstanteGravitacional();
+        double constanteGravitacional = getCONSTANTEGRAVITACIONAL();
         double masaDelPlaneta = getMasa();
         double radioDelPlaneta = Math.pow(getRadio(), 2);
 
@@ -75,18 +67,8 @@ public enum Planeta {
         return gravedadEnLaSuperficie;
     }
 
-    public double gravedadEnLaSuperficie(Planeta planeta) {
-        double constanteGravitacional = getConstanteGravitacional();
-        double masaDelPlaneta = planeta.getMasa();
-        double radioDelPlaneta = Math.pow(planeta.getRadio(), 2);
-
-        // The formula to calculate the gravity on the surface of a desired planet as a parameter.
-        double gravedadEnLaSuperficie = constanteGravitacional * masaDelPlaneta / radioDelPlaneta;
-        return gravedadEnLaSuperficie;
-    }
-
     public double calcularMasa(double peso) {
-        double gravedadDelPlanetaTierra = gravedadEnLaSuperficie(EARTH);
+        double gravedadDelPlanetaTierra = EARTH.gravedadEnLaSuperficie();
         double tuPesoEnLaTierra = peso;
 
         // The formula to calculate your mass on Earth.
