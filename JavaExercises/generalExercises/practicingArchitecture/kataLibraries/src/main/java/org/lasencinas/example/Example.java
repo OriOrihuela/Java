@@ -8,6 +8,8 @@ public abstract class Example {
     private String name = null;
     private int ISBN = 0;
     private TownHall townHallWhereBelongs = null;
+    private String editorial = null;
+    private String title = null;
 
 
     /* ---- Constructor ---- */
@@ -32,6 +34,14 @@ public abstract class Example {
         return ISBN;
     }
 
+    public String getEditorial() {
+        return editorial;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
 
     /* ---- Setters ---- */
     public void setTownHallWhereBelongs(TownHall townHallWhereBelongs) {
@@ -46,9 +56,16 @@ public abstract class Example {
         this.ISBN = ISBN;
     }
 
+    public void setEditorial(String editorial) {
+        this.editorial = editorial;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
 
     /* ---- Behaviours ---- */
-
     @Override
     public String toString() {
         return "name: '" + getName() + '\'' + '\n' +
