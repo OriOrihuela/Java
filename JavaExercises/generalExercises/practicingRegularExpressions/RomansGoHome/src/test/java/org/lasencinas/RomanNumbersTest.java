@@ -38,14 +38,14 @@ public class RomanNumbersTest {
 
     @Test
     public void romanNumbersNamesIteratorTest() {
-        for (RomanNumbers planeta : RomanNumbers.values()) {
-            assertThat(planeta.name()).isIn(romanNumbers);
+        for (RomanNumbers number : RomanNumbers.values()) {
+            assertThat(number.name()).isIn(romanNumbers);
         }
     }
 
     @Test
     public void romanNumberGetValueTest() {
-        RomanNumbers planeta = RomanNumbers.X;
-        assertThat(planeta.getValue()).isEqualTo(10);
+        RomanNumbers number = RomanNumbers.X;
+        assertThat(number.getValue()).isEqualTo(10);
     }
 }
