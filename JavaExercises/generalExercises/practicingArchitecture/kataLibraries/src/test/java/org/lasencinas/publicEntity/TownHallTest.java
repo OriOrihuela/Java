@@ -3,6 +3,8 @@ package org.lasencinas.publicEntity;
 import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
+import org.lasencinas.example.Example;
+import org.lasencinas.example.Magazine;
 import org.lasencinas.person.Person;
 
 
@@ -25,7 +27,7 @@ public class TownHallTest {
     @Test
     public void gettersAndSettersTest() {
         assertEquals("Ajuntament de Palma", townHall.getEntityName());
-        assertNotNull(townHall.getLibraryList());
+
 
         townHall.setEntityName("Bobobó");
         assertEquals("Bobobó", townHall.getEntityName());
@@ -37,11 +39,24 @@ public class TownHallTest {
 
         townHall.addMajor(major);
         assertEquals(major, townHall.getMajor());
+
+        townHall.createExampleList();
+        Example example = new Magazine();
+        townHall.addExample(example);
+        assertNotNull(townHall.getExampleList());
     }
 
     @Test
     public void toStringTest() {
+        townHall.createExampleList();
+        Example example = new Magazine();
+        townHall.addExample(example);
 
+        townHall.createLibraryList();
+        Library library = townHall.createLibrary();
+        townHall.addLibrary(library);
+
+        townHall.addMajor(major);
 
         System.out.println(townHall.toString());
     }
@@ -49,6 +64,7 @@ public class TownHallTest {
     @Test
     public void createAndAddLibraryTest() {
         Library library = townHall.createLibrary();
+        townHall.createLibraryList();
         townHall.addLibrary(library);
         assertNotNull(townHall.getLibraryList());
     }
