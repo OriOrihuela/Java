@@ -11,7 +11,7 @@ public class TownHall extends PublicEntity {
     /* ---- Properties of the class ---- */
     private Person major = null;
     private List<Example> exampleList = null;
-    private List<Library> libraryList = new ArrayList<>();
+    private List<Library> libraryList = null;
 
 
     /* ---- Constructor ---- */
@@ -43,28 +43,30 @@ public class TownHall extends PublicEntity {
     }
 
 
-    /* ---- Setters ---- */
-    public void setLibraryList(List<Library> libraryList) {
-        this.libraryList = libraryList;
-    }
-
-    public void setMajor(Person major) {
-        this.major = major;
-    }
-
-    public void setExampleList(List<Example> exampleList) {
-        this.exampleList = exampleList;
-    }
-
-
     /* ---- Behaviours ---- */
     public Library createLibrary() {
         Library library = new Library();
         return library;
     }
 
+    public void createLibraryList() {
+        this.libraryList = new ArrayList<>();
+    }
+
     public void addLibrary(Library library) {
         getLibraryList().add(library);
+    }
+
+    public void createExampleList() {
+        this.exampleList = new ArrayList<>();
+    }
+
+    public void addExample(Example example) {
+        getExampleList().add(example);
+    }
+
+    public void addMajor(Person major) {
+        this.major = major;
     }
 
     @Override
