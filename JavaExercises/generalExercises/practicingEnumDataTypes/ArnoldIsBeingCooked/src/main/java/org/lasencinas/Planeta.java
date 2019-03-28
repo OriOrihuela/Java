@@ -18,17 +18,12 @@ public enum Planeta {
     private double masa = 0d;
     private double radio = 0d;
     private final double CONSTANTEGRAVITACIONAL = 6.67300E-11;
-    private List<Double> planets = null;
 
 
     /* ---- Constructors ---- */
     Planeta(double masa, double radio) {
         this.masa = masa;
         this.radio = radio;
-    }
-
-    Planeta(Double... planets1) {
-        this.planets = Arrays.asList(planets1);
     }
 
 
@@ -41,18 +36,8 @@ public enum Planeta {
         return radio;
     }
 
-    public List<Double> getPlanets() {
-        return planets;
-    }
-
     public double getCONSTANTEGRAVITACIONAL() {
         return CONSTANTEGRAVITACIONAL;
-    }
-
-
-    /* ---- Setters ---- */
-    public void setPlanets(List<Double> planets) {
-        this.planets = planets;
     }
 
 
