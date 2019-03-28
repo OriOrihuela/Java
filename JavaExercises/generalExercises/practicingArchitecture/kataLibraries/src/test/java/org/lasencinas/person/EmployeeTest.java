@@ -1,8 +1,7 @@
-package org.lasencinas.personTest;
+package org.lasencinas.person;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.lasencinas.person.Employee;
 
 import static org.junit.Assert.*;
 

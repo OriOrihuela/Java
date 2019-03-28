@@ -1,4 +1,4 @@
-package org.lasencinas.publicEntityTest;
+package org.lasencinas.publicEntity;
 
 import static org.junit.Assert.*;
 
@@ -7,8 +7,6 @@ import org.junit.Test;
 import org.lasencinas.person.Employee;
 import org.lasencinas.person.Member;
 import org.lasencinas.person.Person;
-import org.lasencinas.publicEntity.Library;
-import org.lasencinas.publicEntity.TownHall;
 
 import java.util.ArrayList;
 import java.util.List;

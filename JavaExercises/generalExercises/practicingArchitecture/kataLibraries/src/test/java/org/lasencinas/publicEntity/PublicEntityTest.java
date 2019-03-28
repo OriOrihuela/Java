@@ -1,12 +1,9 @@
-package org.lasencinas.publicEntityTest;
+package org.lasencinas.publicEntity;
 
 import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 import org.lasencinas.person.Person;
-import org.lasencinas.publicEntity.Library;
-import org.lasencinas.publicEntity.PublicEntity;
-import org.lasencinas.publicEntity.TownHall;
 
 public class PublicEntityTest {
 

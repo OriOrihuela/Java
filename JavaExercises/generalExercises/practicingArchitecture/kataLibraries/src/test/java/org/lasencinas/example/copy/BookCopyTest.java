@@ -1,10 +1,9 @@
-package org.lasencinas.exampleTest.copyTest;
+package org.lasencinas.example.copy;
 
 import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 import org.lasencinas.example.Book;
-import org.lasencinas.example.copy.BookCopy;
 import org.lasencinas.publicEntity.Library;
 
 public class BookCopyTest {

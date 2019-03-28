@@ -1,12 +1,9 @@
-package org.lasencinas.exampleTest;
+package org.lasencinas.example;
 
 import static org.junit.Assert.*;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.lasencinas.example.Book;
-import org.lasencinas.example.Example;
-import org.lasencinas.example.Magazine;
 
 public class ExampleTest {
 

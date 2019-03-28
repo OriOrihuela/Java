@@ -1,11 +1,10 @@
-package org.lasencinas.exampleTest.copyTest;
+package org.lasencinas.example.copy;
 
 import static org.junit.Assert.*;
 
 import org.junit.Before;
 import org.junit.Test;
 import org.lasencinas.example.Magazine;
-import org.lasencinas.example.copy.Copy;
 import org.lasencinas.publicEntity.Library;
 
 

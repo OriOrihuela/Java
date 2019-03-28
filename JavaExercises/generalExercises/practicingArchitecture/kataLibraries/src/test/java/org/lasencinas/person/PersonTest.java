@@ -1,10 +1,9 @@
-package org.lasencinas.personTest;
+package org.lasencinas.person;
 
 import static org.junit.Assert.*;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.lasencinas.person.Person;
 
 public class PersonTest {
 
