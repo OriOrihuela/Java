@@ -12,6 +12,7 @@ public class RomanNumbersTest {
     public static String[] romanNumbers;
 
 
+    /* ---- Constructor ---- */
     @BeforeClass
     public static void romanNumbersSetupTest() {
         romanNumbers = new String[13];
@@ -23,6 +24,8 @@ public class RomanNumbersTest {
         assertThat(romanNumbersCounter).isEqualTo(RomanNumbers.values().length);
     }
 
+
+    /* ---- Test cases ---- */
     @Test
     public void romanNumberConstructorTest() {
         RomanNumbers number = RomanNumbers.X;
