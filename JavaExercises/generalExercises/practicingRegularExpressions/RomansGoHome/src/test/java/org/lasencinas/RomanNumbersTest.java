@@ -55,13 +55,24 @@ public class RomanNumbersTest {
     @Test
     public void sumRomanNumbersTest() {
         String romanNumbers1 = "MMM";
-        int result = RomanNumbersUtil.sumRomanNumbers(romanNumbers1);
-        assertEquals(3000, result);
+        assertEquals(3000, RomanNumbersUtil.sumRomanNumbers(romanNumbers1));
 
         String romanNumbers2 = "MMMDCCCLXXXVIII";
         assertEquals(3888, RomanNumbersUtil.sumRomanNumbers(romanNumbers2));
 
         String romanNumbers3 = "MMDCCLXXVII";
         assertEquals(2777, RomanNumbersUtil.sumRomanNumbers(romanNumbers3));
+    }
+
+    @Test
+    public void subtractRomanNumbersTest() {
+        String romanNumbers = "IX";
+        assertEquals(9, RomanNumbersUtil.subtractRomanNumbers(romanNumbers));
+
+        String romanNumbers2 = "XLIV";
+        assertEquals(44, RomanNumbersUtil.subtractRomanNumbers(romanNumbers2));
+
+        String romanNumbers3 = "CDXLIV";
+        assertEquals(444, RomanNumbersUtil.subtractRomanNumbers(romanNumbers3));
     }
 }
