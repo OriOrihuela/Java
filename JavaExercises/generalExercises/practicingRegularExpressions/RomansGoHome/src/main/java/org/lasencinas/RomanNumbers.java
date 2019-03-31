@@ -29,7 +29,7 @@ public enum RomanNumbers {
 
 
     /* ---- Getters ---- */
-    public int getValue() {
+    int getValue() {
         return value;
     }
 }
