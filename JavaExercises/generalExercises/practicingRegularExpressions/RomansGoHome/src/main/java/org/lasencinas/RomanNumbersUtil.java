@@ -1,37 +1,56 @@
 package org.lasencinas;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class RomanNumbersUtil {
 
     /* ---- Behaviours ---- */
-    public static int sumRomanNumbers(String romanNumbers) {
-        int sumCounter = 0;
+    public static int sumatoryRomanNumbers(String romanNumbers) {
+        int result = 0;
         for (int index = 0; index < romanNumbers.length(); index++) {
             Character number = romanNumbers.charAt(index);
             for (RomanNumbers romanNumber : RomanNumbers.values()) {
                 if (romanNumber.name().equals(number.toString())) {
-                    sumCounter += romanNumber.getValue();
+                    result += romanNumber.getValue();
                 }
             }
         }
-        return sumCounter;
+        return result;
     }
 
-    public static int subtractRomanNumbers(String romanNumbers) {
-        int subtractCounter = 0;
+    public static int subtractiveRomanNumbers(String romanNumbers) {
+        int result = 0;
         for (int index = 0; index < romanNumbers.length(); index++) {
             try {
-                Character number = romanNumbers.charAt(index);
+                Character firstNumber = romanNumbers.charAt(index);
                 Character nextNumber = romanNumbers.charAt(index + 1);
-                String romanNumber = number.toString() + nextNumber.toString();
+                String romanNumber = firstNumber.toString() + nextNumber.toString();
                 for (RomanNumbers numbers : RomanNumbers.values()) {
                     if (numbers.name().equals(romanNumber)) {
-                        subtractCounter += numbers.getValue();
+                        result += numbers.getValue();
                     }
                 }
             } catch (StringIndexOutOfBoundsException exception) {
-                //
+                // :D
             }
         }
-        return subtractCounter;
+        return result;
+    }
+
+    public static int computeRomanNumbers(String romanNumbers, String regEx) {
+        int result = 0;
+        Pattern pattern = Pattern.compile(regEx);
+        Matcher matcher = pattern.matcher(romanNumbers);
+
+        while(matcher.find()) {
+            String matchedNumber = matcher.group();
+            for (RomanNumbers numbers : RomanNumbers.values()) {
+                if (numbers.name().equals(matchedNumber)) {
+                    result += numbers.getValue();
+                }
+            }
+        }
+        return result;
     }
 }
