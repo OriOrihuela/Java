@@ -6,6 +6,8 @@ import static org.junit.Assert.*;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import java.util.regex.Pattern;
+
 public class RomanNumbersTest {
 
     /* ---- Properties ---- */
@@ -55,24 +57,46 @@ public class RomanNumbersTest {
     @Test
     public void sumRomanNumbersTest() {
         String romanNumbers1 = "MMM";
-        assertEquals(3000, RomanNumbersUtil.sumRomanNumbers(romanNumbers1));
+        assertEquals(3000, RomanNumbersUtil.sumatoryRomanNumbers(romanNumbers1));
 
         String romanNumbers2 = "MMMDCCCLXXXVIII";
-        assertEquals(3888, RomanNumbersUtil.sumRomanNumbers(romanNumbers2));
+        assertEquals(3888, RomanNumbersUtil.sumatoryRomanNumbers(romanNumbers2));
 
         String romanNumbers3 = "MMDCCLXXVII";
-        assertEquals(2777, RomanNumbersUtil.sumRomanNumbers(romanNumbers3));
+        assertEquals(2777, RomanNumbersUtil.sumatoryRomanNumbers(romanNumbers3));
+
+        String romanNumbers4 = "LXXX";
+        assertEquals(80, RomanNumbersUtil.sumatoryRomanNumbers(romanNumbers4));
     }
 
     @Test
     public void subtractRomanNumbersTest() {
         String romanNumbers = "IX";
-        assertEquals(9, RomanNumbersUtil.subtractRomanNumbers(romanNumbers));
+        assertEquals(9, RomanNumbersUtil.subtractiveRomanNumbers(romanNumbers));
 
         String romanNumbers2 = "XLIV";
-        assertEquals(44, RomanNumbersUtil.subtractRomanNumbers(romanNumbers2));
+        assertEquals(44, RomanNumbersUtil.subtractiveRomanNumbers(romanNumbers2));
 
         String romanNumbers3 = "CDXLIV";
-        assertEquals(444, RomanNumbersUtil.subtractRomanNumbers(romanNumbers3));
+        assertEquals(444, RomanNumbersUtil.subtractiveRomanNumbers(romanNumbers3));
+    }
+
+    @Test
+    public void computeRomanNumbersTest() {
+        String reGex = "(?<!C)[DM]|(?<!X)[LC](?![DM])|(?<!I)[VX](?![LC])|I(?![VX])";
+        String romanNumbers = "CDXXXIX";
+        assertEquals(439, RomanNumbersUtil.computeRomanNumbers(romanNumbers, reGex));
+
+        /*String romanNumbers2 = "CDL";
+        assertEquals(450, RomanNumbersUtil.computeRomanNumbers(romanNumbers2));
+
+        String romanNumbers3 = "DCLXVI";
+        assertEquals(666, RomanNumbersUtil.computeRomanNumbers(romanNumbers3));
+
+        String romanNumbers4 = "CMXCIX";
+        assertEquals(999, RomanNumbersUtil.computeRomanNumbers(romanNumbers4));
+
+        String romanNumbers5 = "MCDXLIV";
+        assertEquals(1444, RomanNumbersUtil.computeRomanNumbers(romanNumbers5));*/
     }
 }
