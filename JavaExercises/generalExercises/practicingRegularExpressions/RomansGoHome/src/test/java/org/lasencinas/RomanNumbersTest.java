@@ -83,11 +83,10 @@ public class RomanNumbersTest {
 
     @Test
     public void computeRomanNumbersTest() {
-        String reGex = "(C[DM])|(X[LC])|(I[VX])";
         String romanNumbers = "CDXXXIX";
-        assertEquals(439, RomanNumbersUtil.computeRomanNumbers(romanNumbers, reGex));
+        assertEquals(439, RomanNumbersUtil.computeRomanNumbers(romanNumbers));
 
-        /*String romanNumbers2 = "CDL";
+        String romanNumbers2 = "CDL";
         assertEquals(450, RomanNumbersUtil.computeRomanNumbers(romanNumbers2));
 
         String romanNumbers3 = "DCLXVI";
@@ -97,6 +96,6 @@ public class RomanNumbersTest {
         assertEquals(999, RomanNumbersUtil.computeRomanNumbers(romanNumbers4));
 
         String romanNumbers5 = "MCDXLIV";
-        assertEquals(1444, RomanNumbersUtil.computeRomanNumbers(romanNumbers5));*/
+        assertEquals(1444, RomanNumbersUtil.computeRomanNumbers(romanNumbers5));
     }
 }
