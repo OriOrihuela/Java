@@ -43,7 +43,7 @@ public class RomanNumbersUtil {
         Pattern pattern = Pattern.compile(regEx);
         Matcher matcher = pattern.matcher(romanNumbers);
 
-        while(matcher.find()) {
+        while (matcher.find()) {
             String matchedNumber = matcher.group();
             for (RomanNumbers numbers : RomanNumbers.values()) {
                 if (numbers.name().equals(matchedNumber)) {
