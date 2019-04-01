@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
 public class RomanNumbersUtil {
 
     /* ---- Behaviours ---- */
-    public static int sumatoryRomanNumbers(String romanNumbers) {
+    public static int sumatoryRomanNumbersResult(String romanNumbers) {
         int result = 0;
         for (int index = 0; index < romanNumbers.length(); index++) {
             Character number = romanNumbers.charAt(index);
@@ -19,7 +19,7 @@ public class RomanNumbersUtil {
         return result;
     }
 
-    public static int subtractiveRomanNumbers(String romanNumbers) {
+    public static int subtractiveRomanNumbersResult(String romanNumbers) {
         int result = 0;
         for (int index = 0; index < romanNumbers.length(); index++) {
             try {
@@ -44,7 +44,7 @@ public class RomanNumbersUtil {
         Matcher m = p.matcher(romanNumbers);
         int result = 0;
         while (m.find()){
-            result += sumatoryRomanNumbers(m.group());
+            result += sumatoryRomanNumbersResult(m.group());
         }
         return result;
     }
