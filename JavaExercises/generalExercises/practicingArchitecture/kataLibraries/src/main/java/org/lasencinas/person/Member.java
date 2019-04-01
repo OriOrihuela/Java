@@ -1,5 +1,6 @@
 package org.lasencinas.person;
 
+import org.lasencinas.example.copy.BookCopy;
 import org.lasencinas.publicEntity.Library;
 
 public class Member extends Person {
@@ -8,6 +9,7 @@ public class Member extends Person {
     private int memberID = 0;
     private boolean wantsToBeMember = true;
     private Library associatedLibrary = null;
+    private BookCopy[] bookCopiesList = null;
 
 
     /* ---- Constructor ---- */
@@ -32,6 +34,10 @@ public class Member extends Person {
         return associatedLibrary;
     }
 
+    public BookCopy[] getBookCopiesList() {
+        return bookCopiesList;
+    }
+
 
     /* ---- Setters ---- */
     public void setMemberID(int memberID) {
@@ -44,5 +50,15 @@ public class Member extends Person {
 
     public void setAssociatedLibrary(Library associatedLibrary) {
         this.associatedLibrary = associatedLibrary;
+    }
+
+
+    /* ---- Behaviours ---- */
+    public void addBookCopy(BookCopy bookCopy) {
+        for (int index = 0; index < getBookCopiesList().length; index++) {
+            if (this.bookCopiesList[index].equals(null)) {
+                this.bookCopiesList[index] = bookCopy;
+            }
+        }
     }
 }
