@@ -1,5 +1,6 @@
 package org.lasencinas.publicEntity;
 
+import org.lasencinas.example.copy.BookCopy;
 import org.lasencinas.example.copy.Copy;
 import org.lasencinas.person.Employee;
 import org.lasencinas.person.Member;
@@ -117,5 +118,26 @@ public class Library extends PublicEntity {
                 "\n" + "townHall " + getTownHall() +
                 "\n" + "employeeList: " + getEmployeeList() +
                 "\n" + "memberList: " + getMemberList() + "\n" + super.toString() + "\n";
+    }
+
+    public void borrowCopyToEmployee(Employee employee, Copy copy) {
+        if (!copy.isBorrowed()) {
+            employee.addCopy(copy);
+            copy.setEmployeeWhoOwnsIt(employee);
+        }
+    }
+
+    public void borrowBookCopyToEmployee(Employee employee, BookCopy bookCopy) {
+        if (!bookCopy.isBorrowed()) {
+            employee.addBookCopy(bookCopy);
+            bookCopy.setEmployeeWhoOwnsIt(employee);
+        }
+    }
+
+    public void borrowBookCopyToMember(Member member, BookCopy bookCopy) {
+        if (!bookCopy.isBorrowed()) {
+            member.addBookCopy(bookCopy);
+            bookCopy.setMemberWhoOwnsIt(member);
+        }
     }
 }
