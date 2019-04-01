@@ -38,7 +38,19 @@ public class RomanNumbersUtil {
         return result;
     }
 
-    public static int computeRomanNumbers(String romanNumbers, String regEx) {
+    public static int computeSumatoryRomanNumbers(String romanNumbers) {
+        String regex = "(?<!C)[DM]|(?<!X)[LC](?![DM])|(?<!I)[VX](?![LC])|I(?![VX])";
+        Pattern p = Pattern.compile(regex);
+        Matcher m = p.matcher(romanNumbers);
+        int result = 0;
+        while (m.find()){
+            result += sumatoryRomanNumbers(m.group());
+        }
+        return result;
+    }
+
+    public static int computeRomanNumbers(String romanNumbers) {
+        String regEx = "(C[DM])|(X[LC])|(I[VX])";
         int result = 0;
         Pattern pattern = Pattern.compile(regEx);
         Matcher matcher = pattern.matcher(romanNumbers);
@@ -51,6 +63,6 @@ public class RomanNumbersUtil {
                 }
             }
         }
-        return result;
+        return result + computeSumatoryRomanNumbers(romanNumbers);
     }
 }
