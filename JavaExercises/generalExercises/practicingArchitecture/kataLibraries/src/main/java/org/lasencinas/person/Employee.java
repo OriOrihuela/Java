@@ -1,6 +1,10 @@
 package org.lasencinas.person;
 
+import org.lasencinas.example.copy.BookCopy;
+import org.lasencinas.example.copy.Copy;
 import org.lasencinas.publicEntity.Library;
+
+import java.util.List;
 
 public class Employee extends Person {
 
@@ -8,6 +12,8 @@ public class Employee extends Person {
     private int employeeID = 0;
     private boolean wantsToBeEmployee = true;
     private Library libraryWhereWorks = null;
+    private BookCopy[] bookCopiesList = null;
+    private List<Copy> copyList = null;
 
 
     /* ---- Constructor ---- */
@@ -31,6 +37,14 @@ public class Employee extends Person {
         return libraryWhereWorks;
     }
 
+    public BookCopy[] getBookCopiesList() {
+        return bookCopiesList;
+    }
+
+    public List<Copy> getCopyList() {
+        return copyList;
+    }
+
 
     /* ---- Setters ---- */
     public void setEmployeeID(int employeeID) {
@@ -43,5 +57,18 @@ public class Employee extends Person {
 
     public void setLibraryWhereWorks(Library libraryWhereWorks) {
         this.libraryWhereWorks = libraryWhereWorks;
+    }
+
+    /* ---- Behaviours --- */
+    public void addBookCopy(BookCopy bookCopy) {
+        for (int index = 0; index < getBookCopiesList().length; index++) {
+            if (this.bookCopiesList[index].equals(null)) {
+                this.bookCopiesList[index] = bookCopy;
+            }
+        }
+    }
+
+    public void addCopy(Copy copy) {
+        getCopyList().add(copy);
     }
 }
