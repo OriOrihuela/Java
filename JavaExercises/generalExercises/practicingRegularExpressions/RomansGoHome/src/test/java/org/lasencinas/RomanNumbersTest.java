@@ -6,8 +6,6 @@ import static org.junit.Assert.*;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import java.util.regex.Pattern;
-
 public class RomanNumbersTest {
 
     /* ---- Properties ---- */
@@ -57,28 +55,28 @@ public class RomanNumbersTest {
     @Test
     public void sumRomanNumbersTest() {
         String romanNumbers1 = "MMM";
-        assertEquals(3000, RomanNumbersUtil.sumatoryRomanNumbers(romanNumbers1));
+        assertEquals(3000, RomanNumbersUtil.sumatoryRomanNumbersResult(romanNumbers1));
 
         String romanNumbers2 = "MMMDCCCLXXXVIII";
-        assertEquals(3888, RomanNumbersUtil.sumatoryRomanNumbers(romanNumbers2));
+        assertEquals(3888, RomanNumbersUtil.sumatoryRomanNumbersResult(romanNumbers2));
 
         String romanNumbers3 = "MMDCCLXXVII";
-        assertEquals(2777, RomanNumbersUtil.sumatoryRomanNumbers(romanNumbers3));
+        assertEquals(2777, RomanNumbersUtil.sumatoryRomanNumbersResult(romanNumbers3));
 
         String romanNumbers4 = "LXXX";
-        assertEquals(80, RomanNumbersUtil.sumatoryRomanNumbers(romanNumbers4));
+        assertEquals(80, RomanNumbersUtil.sumatoryRomanNumbersResult(romanNumbers4));
     }
 
     @Test
     public void subtractRomanNumbersTest() {
         String romanNumbers = "IX";
-        assertEquals(9, RomanNumbersUtil.subtractiveRomanNumbers(romanNumbers));
+        assertEquals(9, RomanNumbersUtil.subtractiveRomanNumbersResult(romanNumbers));
 
         String romanNumbers2 = "XLIV";
-        assertEquals(44, RomanNumbersUtil.subtractiveRomanNumbers(romanNumbers2));
+        assertEquals(44, RomanNumbersUtil.subtractiveRomanNumbersResult(romanNumbers2));
 
         String romanNumbers3 = "CDXLIV";
-        assertEquals(444, RomanNumbersUtil.subtractiveRomanNumbers(romanNumbers3));
+        assertEquals(444, RomanNumbersUtil.subtractiveRomanNumbersResult(romanNumbers3));
     }
 
     @Test
