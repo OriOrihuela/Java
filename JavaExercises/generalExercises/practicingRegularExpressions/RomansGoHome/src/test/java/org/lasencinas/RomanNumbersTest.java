@@ -83,7 +83,7 @@ public class RomanNumbersTest {
 
     @Test
     public void computeRomanNumbersTest() {
-        String reGex = "(?<!C)[DM]|(?<!X)[LC](?![DM])|(?<!I)[VX](?![LC])|I(?![VX])";
+        String reGex = "(C[DM])|(X[LC])|(I[VX])";
         String romanNumbers = "CDXXXIX";
         assertEquals(439, RomanNumbersUtil.computeRomanNumbers(romanNumbers, reGex));
 
